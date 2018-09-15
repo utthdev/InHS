@@ -15,6 +15,92 @@
  ******************************************************************************/
 package org.utt.app;
 
-public class InApp {
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
+import org.utt.app.dao.DBmanager;
+import org.utt.app.dao.SetupSQL;
+import org.utt.app.util.I18n;
+import org.utt.app.util.Prop;
+
+import com.alee.laf.optionpane.WebOptionPane;
+import com.alee.laf.rootpane.WebFrame;
+
+public class InApp extends WebFrame{
+	public final static String version =I18n.lang("label.version");
+    public  static String ip = "";
+    public  static String username = "";
+    public  static String name = "";
+    public  static String usertype = "";
+    public  static String userappcode = "";
+    public  static String userposition = "";
+    public  static String cliniccode = "";
+    public  static String reportcode = "";
+	public InApp() {
+		try {
+            InetAddress ipcom= InetAddress.getLocalHost();
+            ip=ipcom.getHostAddress();
+        } catch (UnknownHostException e1) {
+            e1.printStackTrace();
+        }
+        checkIP(ip);
+	}
+	public void checkIP(String ipUser){
+        int passport=0;
+        String ver="";
+        Connection con=new DBmanager().getConnMySql();
+        PreparedStatement stmt = null;
+        try {
+            stmt = con.prepareStatement(SetupSQL.sql_checkip);
+            stmt.setString(1, ipUser.trim());
+            ResultSet rs = stmt.executeQuery();
+            int n=0;
+            while( rs.next() ){
+                n++;
+                if(rs.getString(2) !=null){
+                    ver=rs.getString(2).trim();
+                }
+            }
+            if(n<1){
+                passport=1;
+            }
+            stmt.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if(passport==0){
+            if(versionCompare(ver, Prop.getProperty("app.version"))<0){
+                int result = WebOptionPane.showConfirmDialog(rootPane, I18n.lang("version.compare.text"),
+                        I18n.lang("version.compare.title"), WebOptionPane.OK_OPTION);
+                if (result == WebOptionPane.OK_OPTION) {
+                    System.exit(0);
+                }else{
+                    System.exit(0);
+                }
+            }else if (versionCompare(ver,Prop.getProperty("app.version"))>=0){}
+        }
+        else{
+            dispose();
+            System.exit(0);
+        }
+    }
+    private Integer versionCompare(String str1, String str2){
+        String[] vals1 = str1.split("\\.");
+        String[] vals2 = str2.split("\\.");
+        int i = 0;
+        while (i < vals1.length && i < vals2.length && vals1[i].equals(vals2[i])){
+            i++;
+        }
+        if (i < vals1.length && i < vals2.length){
+            int diff = Integer.valueOf(vals1[i]).compareTo(Integer.valueOf(vals2[i]));
+            return Integer.signum(diff);
+        }else{
+            return Integer.signum(vals1.length - vals2.length);
+        }
+    }
 }
