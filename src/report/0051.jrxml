@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-07-19T15:29:03 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="0051" pageWidth="590" pageHeight="840" columnWidth="550" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a509daf9-b4e2-44f7-92ed-c30509b9fd03">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="barcode" fontName="THSarabun" fontSize="6"/>
+	<style name="font13" fontName="THSarabun" fontSize="13"/>
+	<parameter name="line1" class="java.lang.String"/>
+	<parameter name="line2" class="java.lang.String"/>
+	<parameter name="line3" class="java.lang.String"/>
+	<parameter name="medcont" class="java.lang.String"/>
+	<parameter name="barcode" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="800" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="780" width="50" height="20" uuid="6bd751c5-14a8-4d91-93d8-84f21c504d4d">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="THSarabunNew" size="12"/>
+				</textElement>
+				<text><![CDATA[report name: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="782" width="230" height="18" uuid="70c09576-5eb9-401e-8837-b1629f5e27c5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="THSarabunNew" size="12"/>
+				</textElement>
+				<text><![CDATA[เอกสารสำคัญห้ามนำออกนอกโรงพยาบาลพบเห็นส่งคืนห้องบัตร]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="780" width="35" height="20" uuid="0b664786-eabf-41bc-b7d9-3fbb965d9c95">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="THSarabunNew" size="12"/>
+				</textElement>
+				<text><![CDATA[วันที่ พิมพ์]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="59" y="780" width="80" height="20" uuid="bd61e3fd-28b4-452b-88c3-6064ef9018d7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="THSarabunNew" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{line3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="181" y="780" width="110" height="20" uuid="e3b20087-8873-4c81-bc29-e47c2a4e1780">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="THSarabunNew" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="719" width="515" height="39" uuid="c4ca6836-37e4-4877-bd99-822e3479a0b7"/>
+				<textElement>
+					<font fontName="THSarabunNew" size="16" isBold="false"/>
+					<paragraph lineSpacing="Fixed" lineSpacingSize="10.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{line1}+"\n"+$P{line2}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="" x="390" y="755" width="160" height="30" uuid="23a113d9-8a05-4284-83f5-559487f24351">
+					<property name="com.jaspersoft.studio.unit.barHeight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="false" checksumRequired="false" barWidth="1" barHeight="3">
+					<jr:codeExpression><![CDATA[$P{barcode}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<staticText>
+				<reportElement x="10" y="409" width="519" height="25" uuid="95439991-76f7-405d-8e1f-e135bb38f31d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[1..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="435" width="519" height="25" uuid="dccdaf0d-0526-4c59-95a8-ab798a135916">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[2..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="460" width="519" height="25" uuid="b317c4d8-7182-4cdc-958a-3cfbd14952e9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[3..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="485" width="519" height="25" uuid="b060f7e3-3719-4712-b940-f092fbc66b37">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[4..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="337" y="653" width="62" height="25" uuid="a3c7bb2a-05b8-4293-a279-70f04a8bf203">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="14"/>
+				</textElement>
+				<text><![CDATA[ผู้ตรวจสอบ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="653" width="128" height="25" uuid="c41a85c1-1d5d-4566-83f8-964af08f07a4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="14"/>
+				</textElement>
+				<text><![CDATA[ดึก ................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="678" width="128" height="25" uuid="1ee0a46a-7253-4765-aabd-ccbfc2400f40">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="14"/>
+				</textElement>
+				<text><![CDATA[เช้า ................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="703" width="128" height="25" uuid="553b6c42-674a-4ed7-97ce-74afdd755a5a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="14"/>
+				</textElement>
+				<text><![CDATA[บ่าย ................................................]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="718" width="514" height="1" uuid="91536ad1-a089-49ea-8a30-53a02e43404e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<frame>
+				<reportElement x="4" y="4" width="519" height="86" uuid="27e3a0c2-40ee-40d3-9154-a4fa12bf5440"/>
+				<staticText>
+					<reportElement x="481" y="3" width="30" height="30" uuid="fffa50be-c7d4-49dd-92fb-d29c5174624a"/>
+					<textElement>
+						<font fontName="THSarabunNew" size="16"/>
+					</textElement>
+					<text><![CDATA[ ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="3" width="169" height="30" uuid="7c0d13dc-c99e-4992-b0ae-5caafde52ad0"/>
+					<textElement>
+						<font fontName="THSarabunNew" size="16"/>
+					</textElement>
+					<text><![CDATA[ ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="160" y="3" width="238" height="30" uuid="07c56087-523d-47af-af0d-55ca43baaa18"/>
+					<textElement>
+						<font fontName="THSarabunNew" size="18" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Med Sheet โรงพยาบาลอุตรดิตถ์]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="39" width="123" height="25" uuid="f667c0e1-e365-4f2f-87b8-999a3c16c5aa">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font fontName="THSarabunNew" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Med Sheet Cont.]]></text>
+				</staticText>
+			</frame>
+			<line>
+				<reportElement x="1" y="35" width="514" height="1" uuid="5b813d0e-a55c-405e-8bfb-0c8377d7ce72"/>
+			</line>
+			<staticText>
+				<reportElement x="20" y="388" width="119" height="30" uuid="0ad24d58-2292-46a7-b7ff-9bbf7628a7f1"/>
+				<textElement>
+					<font fontName="THSarabunNew" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Med Sheet One Day]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="70" width="519" height="25" uuid="a5df4f22-3ec8-4b53-b0c9-3484abb02aa6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[1..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="95" width="519" height="25" uuid="e2c5ae33-6bd1-41a3-a00e-5f3a131cce8a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[2..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="120" width="519" height="25" uuid="e96d499c-5b60-4102-b772-b062d75c8638">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[3..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="145" width="519" height="25" uuid="ba62b4f8-cd96-463f-9b8e-49517f014b9e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[4..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="170" width="519" height="25" uuid="d4b6321b-59fd-4542-b428-3676ce1dfd2f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[5..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="195" width="519" height="25" uuid="704fcadf-c0d9-49e3-b0a5-4ead9b946c98">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[6..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="220" width="519" height="25" uuid="95398e1e-a41b-4c0d-a1de-98c11574b5a7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[7..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="245" width="519" height="25" uuid="09ea78db-9869-4a8b-a319-8dc71a2a0e55">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[8..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="270" width="519" height="25" uuid="22de8a02-02f4-40ac-99ec-1a17fac63747">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[9..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="295" width="519" height="25" uuid="d3d55032-6f82-46f1-b7fa-ad17404371f2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[10..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="320" width="519" height="25" uuid="ce1d7d3f-a608-4e99-8693-57c9c890be26">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[11..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="345" width="519" height="25" uuid="d84f78ab-2dbf-4b84-8c4d-c81a56f191aa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[12..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="510" width="519" height="25" uuid="c1a302f8-c22a-48e5-989c-008297b69329">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[5..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="536" width="519" height="25" uuid="58731f1b-8902-40fa-83b1-dfb203d3ee53">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[6..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="561" width="519" height="25" uuid="f7054736-5d5f-4fdd-a01d-e4292326b229">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[7..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="586" width="519" height="25" uuid="b31b4261-99d0-4e68-bce1-1b425402b053">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="THSarabunNew" size="16"/>
+				</textElement>
+				<text><![CDATA[8..................................................................................................................................................................................................................................]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>

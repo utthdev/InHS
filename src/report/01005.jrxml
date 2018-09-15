@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2018-08-17T15:39:10 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="01005" pageWidth="590" pageHeight="430" columnWidth="570" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="d2608ff8-2f3d-4e50-bbd7-b5360998fff6">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="line1" class="java.lang.String"/>
+	<parameter name="line2" class="java.lang.String"/>
+	<parameter name="line3" class="java.lang.String"/>
+	<parameter name="line4" class="java.lang.String"/>
+	<parameter name="line5" class="java.lang.String"/>
+	<parameter name="line6" class="java.lang.String"/>
+	<parameter name="line7" class="java.lang.String"/>
+	<parameter name="line9" class="java.lang.String"/>
+	<parameter name="line10" class="java.lang.String"/>
+	<parameter name="line11" class="java.lang.String"/>
+	<parameter name="barcode" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="70" y="0" width="102" height="30" uuid="9c9bf006-3d51-41f2-8693-c0616c2ec8d5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabunNew" size="18" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[โรงพยาบาลอุตรดิตถ์ ]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="" x="10" y="25" width="552" height="25" uuid="06b0f4b8-eb88-4cd4-8fcc-d72d01277897"/>
+				<textElement>
+					<font fontName="THSarabunNew" size="16" isBold="true"/>
+					<paragraph lineSpacing="Fixed" lineSpacingSize="12.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{line3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" x="10" y="43" width="492" height="37" uuid="e85a5145-8e5d-441b-9642-f232d7d0c022"/>
+				<textElement>
+					<font fontName="THSarabunNew" size="14" isBold="true"/>
+					<paragraph lineSpacing="Fixed" lineSpacingSize="12.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{line4}+"\n"+$P{line5}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="189" y="1" width="68" height="30" uuid="c61c13d8-61cf-4e40-9af4-fabf961ed27d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="THSarabunNew" size="16" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ใบนำทาง]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="271" y="2" width="114" height="30" uuid="b91cb702-1c37-4313-8a71-eb4df4b94c33"/>
+				<textElement>
+					<font fontName="THSarabunNew" size="22" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{line11}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="" x="402" y="2" width="160" height="35" uuid="e1eda48f-d2f6-49f7-8cef-c9fa8946d473">
+					<property name="com.jaspersoft.studio.unit.barHeight" value="pixel"/>
+				</reportElement>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="false" checksumRequired="false" barWidth="1" barHeight="3">
+					<jr:codeExpression><![CDATA[$P{barcode}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+		</band>
+	</title>
+	<detail>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="319" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<frame>
+				<reportElement x="0" y="12" width="180" height="258" uuid="6f6777d1-3cee-4fe9-a519-913357fd32fd">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement x="32" y="1" width="140" height="20" uuid="dd34708e-1da4-45d0-9a36-610fa93e3325">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องเจาะเลือด]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="19" width="112" height="20" uuid="c1c7a9ce-1620-47c1-9867-c4d3c1b80eae">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[เจาะ ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="37" width="140" height="20" uuid="a3ac6b8c-aa89-4774-a690-8b72ba4d1167">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้อง x-ray ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="55" width="140" height="20" uuid="479f5617-ea18-4d46-829a-cad6e4b2e4b3">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[หน่วยให้คำปรึกษาแนะนำ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="73" width="90" height="20" uuid="f384c307-bd8d-4edf-adb8-4a912eaf0460">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจคลื่นหัวใจ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="109" width="140" height="20" uuid="428d48a7-97cb-46b5-b39b-1a189fb45e1d">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องเครื่องมือพิเศษ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="127" width="140" height="20" uuid="2f915cd1-1a04-4350-ab7b-ecd2bcd27a3b">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องผ่าตัดเล็ก]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="145" width="107" height="20" uuid="c5c2a6e8-b15d-4e2a-b23e-b339ac7e23e0">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องผ่าตัดใหญ่]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="163" width="140" height="20" uuid="42f01955-9522-4b9d-9fb5-67b43022ba6f">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[Consult รังสีรักษา]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="181" width="140" height="20" uuid="27095c50-df3a-4a7b-9bc4-a65ed2649aa9">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[กายภาพบำบัด]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="199" width="140" height="20" uuid="508b4567-ea1f-4cb3-9841-0be995bad356">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจระบบทางเดินอาหารและตับ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="217" width="140" height="20" uuid="1a30c321-d85e-462c-801b-4357f6cbc7e0">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจกุมารเวช]]></text>
+				</staticText>
+				<line>
+					<reportElement x="59" y="32" width="120" height="1" uuid="b1352823-884a-43fc-af78-b40bf483d161">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="82" y="49" width="97" height="1" uuid="c8b8f69f-a6a8-423f-859a-65f9fe0b5740"/>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="13" width="15" height="1" uuid="8ccaa9d2-706c-4025-aef1-17fa4192cd92"/>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="31" width="15" height="1" uuid="376b9d5d-c6f5-4707-8ac3-ee4d62e9f5ac">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="49" width="15" height="1" uuid="4c32367a-79a2-4607-9609-32db6cf7630e">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="68" width="15" height="1" uuid="84bd6a9d-8713-4898-bdb9-019db1e4da14">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="85" width="15" height="1" uuid="0002dd33-1f97-4edf-941e-16e572aa85f5">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="140" width="15" height="1" uuid="22ed14ef-c4c3-4b38-a99d-ebe1f3cf53ff">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="122" width="15" height="1" uuid="3acba654-f62d-4292-8688-e909e3c27ac9">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="158" width="15" height="1" uuid="8a5af6c2-99ee-4d2a-b00a-e401788c228a">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="176" width="15" height="1" uuid="79a39282-dbb9-40fc-a390-73aef3a20fe8">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="192" width="15" height="1" uuid="9e565731-6236-45bf-9917-db5ebae9a420">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="210" width="15" height="1" uuid="db0e723f-3875-421f-a016-2c89d9ef5259">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="228" width="15" height="1" uuid="ad189d67-9729-467f-85bb-a14a9cd7d56b">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="32" y="91" width="90" height="20" uuid="fcfbc2a1-e46e-4af3-af76-b83004f3c6e3">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้อง Echo]]></text>
+				</staticText>
+				<line>
+					<reportElement x="12" y="104" width="15" height="1" uuid="e0233d90-a991-4ec5-8405-88be984d95a9">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="32" y="235" width="140" height="20" uuid="06351245-9898-40bb-8ed2-d3efe3da3c8b">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจฉีดยาทำแผล]]></text>
+				</staticText>
+				<line>
+					<reportElement x="12" y="246" width="15" height="1" uuid="cf4fffee-fce5-44de-b616-f3362306fd8a">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+			</frame>
+			<frame>
+				<reportElement x="194" y="12" width="180" height="258" uuid="8887b173-9a11-4bbb-849b-f5429c91171a">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement x="32" y="19" width="140" height="20" uuid="11521d8d-f0c7-484b-b42f-c77c7e198439">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องปรึกษาวิสัญญีชั้น1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="37" width="140" height="20" uuid="d04d0d2b-b301-4ed3-902b-0d01093da360">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจศัลยกรรม]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="73" width="140" height="20" uuid="830fa8d1-0f3d-4418-8f9d-b8ab8174cce8">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจกุมารศัลยกรรม]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="55" width="140" height="20" uuid="5bc6feb5-3e4b-4606-a9d5-00a2675f7a91">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจอายุรกรรม]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="91" width="140" height="20" uuid="534b4e86-5ae1-4955-ba63-a302d4a8b38e">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจสูติ-นารี]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="109" width="140" height="20" uuid="743b2b35-107d-4ed7-8eff-daa926e2d361">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจทางเดินปัสสาวะ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="127" width="140" height="20" uuid="405c716e-35bd-4fee-920f-787985b7fd5b">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจกระดูกและข้อ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="145" width="140" height="20" uuid="9635cdf6-6833-4dbc-99d5-a30eebdc0148">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจโรคข้อ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="163" width="140" height="20" uuid="76902809-8896-4c40-b782-5fd8503635a1">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจศัลยกรรมระบบประสาท]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="181" width="140" height="20" uuid="56e94db0-b738-444b-84c0-0fe77633fffc">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจอายุรกรรมระบบประสาท]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="32" y="199" width="140" height="20" uuid="4239efcb-86f6-4051-ab82-528e23db910b">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจเฉพาะโรค]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="217" width="145" height="20" uuid="bbaa33a4-8090-4969-872e-6a6e5c93bca7">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจทันตกรรม]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="235" width="145" height="20" uuid="3d57462e-9f74-4aad-8c64-9d3d0260e8a8">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องตรวจวัณโรค]]></text>
+				</staticText>
+				<line>
+					<reportElement x="12" y="13" width="15" height="1" uuid="2dd9e76e-22ac-429e-953d-054fedbd5966"/>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="31" width="15" height="1" uuid="c18c817d-3762-4e15-ba5d-dea50830d8de">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="49" width="15" height="1" uuid="140d58c2-608a-4365-ad8e-77e06aa48f76">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="67" width="15" height="1" uuid="bd7ca11c-8ff0-4727-af08-ec2d96a3913c">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="85" width="15" height="1" uuid="182ef554-5a5a-4a17-857f-b3be63ddeeed">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="140" width="15" height="1" uuid="540f8211-81c1-4f0a-a571-f238501ea65a">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="122" width="15" height="1" uuid="69473891-dafa-4580-b4af-b275b82011ba">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="158" width="15" height="1" uuid="1f94bca9-5f25-4c81-86b7-d82d0561ad45">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="176" width="15" height="1" uuid="47c0d3cc-ec9f-4cfa-9425-28409db494ae">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="192" width="15" height="1" uuid="dfc131e8-9362-45d2-843f-d3845baadcfb">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="210" width="15" height="1" uuid="14e79d44-939d-4c9b-afbb-d26492fe8dec">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="228" width="15" height="1" uuid="7efaa01f-6a15-4ae6-8c78-31675741db14">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="246" width="15" height="1" uuid="c78dd4fb-d0a9-48cd-a19d-e5f4a582f23f">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="104" width="15" height="1" uuid="a8d361f7-65a3-4ece-8651-2c5cede55550">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="30" y="1" width="140" height="20" uuid="de75d2ec-5445-4cfe-8387-2f311f14dc5e">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ศูนย์ผ่าตัดแบบวันเดียวกลับ ชั้น3]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="385" y="12" width="180" height="258" uuid="b4eb737b-aac2-4807-b5da-b8382afb5eb9">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<staticText>
+					<reportElement x="30" y="3" width="145" height="20" uuid="7b6a605b-a611-4345-8dfe-7be63a20c4d6">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ศูนย์ Refer]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="21" width="145" height="20" uuid="e2ea1293-7e6a-4a0c-b21f-863a4b2458a8">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องฉุกเฉิน (ER)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="39" width="145" height="20" uuid="e2c37d63-64a0-4b5e-9104-a07ef9f9fcf1">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องจ่ายยา]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="75" width="145" height="20" uuid="f426c043-f2bc-44ff-8b19-5c69ea63e369">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องการเงิน]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="57" width="145" height="20" uuid="1d0b8b94-f03f-459f-ba9c-259898c6ab2f">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[ห้องให้ยาเคมีบำบัด]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="93" width="145" height="20" uuid="1d05d4b6-174a-4381-a059-bbcd921410fe">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[อื่นๆ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="111" width="130" height="20" uuid="e6f6ae0e-4bf3-45ff-80f6-970532a9a742">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[นัดตรวจวันที่]]></text>
+				</staticText>
+				<line>
+					<reportElement x="31" y="162" width="136" height="1" uuid="a884d952-7c61-4358-b9d3-220065bd888f"/>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="31" y="135" width="136" height="1" uuid="9e472be7-f093-43b3-aa6a-7b4f60379c26">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="56" y="106" width="111" height="1" uuid="cb21e80d-b6ac-4241-a6d6-83e7f8033b0b"/>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="15" width="15" height="1" uuid="28ee3935-8a7c-452d-8044-c4e6a338d638">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="33" width="15" height="1" uuid="6bf27553-4461-4e42-bcaf-0267e6acd20c">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="51" width="15" height="1" uuid="e31f1c9b-24f3-4de0-aa18-ba23698d4e40">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="70" width="15" height="1" uuid="5aac9d6c-e3d5-4bfd-a945-03da25e11cd1">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="88" width="15" height="1" uuid="5633dcbe-146d-4866-ad96-7cb9ca001f42">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="106" width="15" height="1" uuid="a626dcaa-3167-436d-88c2-be037af36d6f"/>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="12" y="124" width="15" height="1" uuid="105406c0-825d-42cd-9a3f-3e393c47b969"/>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="30" y="137" width="130" height="20" uuid="b3369185-7386-48f1-9127-629d9ccb1a32">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[Admit ตึก]]></text>
+				</staticText>
+				<line>
+					<reportElement x="31" y="179" width="136" height="1" uuid="fb44ff73-e86c-4eaa-9828-679b6c77937c"/>
+					<graphicElement>
+						<pen lineStyle="Dotted" lineColor="#6F6F6F"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="41" y="188" width="130" height="20" uuid="222c23ff-e915-43f4-874a-d3b7b59b507f">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="TH Sarabun New" size="14"/>
+					</textElement>
+					<text><![CDATA[เดิน       รถนั่ง       รถนอน]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="27" y="194" width="8" height="8" uuid="bfda34d1-fd32-47eb-b0da-c2b14f22abfc">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+				</rectangle>
+				<rectangle>
+					<reportElement x="63" y="194" width="8" height="8" uuid="1704b20b-3a8d-482d-a9f8-e73539daf45a">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+				</rectangle>
+				<rectangle>
+					<reportElement x="103" y="194" width="8" height="8" uuid="65b31980-6cb5-4e87-b006-6c29c710a2f6">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+				</rectangle>
+			</frame>
+			<staticText>
+				<reportElement x="430" y="1" width="100" height="20" uuid="3471381a-ae1d-45e6-b519-cf10431b5a2a">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="THSarabunNew" size="14"/>
+				</textElement>
+				<text><![CDATA[กิจกรรม]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="1" width="100" height="20" uuid="6883c1dd-6ec6-4540-8b7c-ac44a3f5c4ef">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="THSarabunNew" size="14"/>
+				</textElement>
+				<text><![CDATA[กิจกรรม]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="1" width="100" height="20" uuid="cf213a05-9699-49ec-85d1-1f6cf7759813">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="THSarabunNew" size="14"/>
+				</textElement>
+				<text><![CDATA[กิจกรรม]]></text>
+			</staticText>
+			<line>
+				<reportElement x="6" y="2" width="560" height="1" uuid="6cc55269-a29c-43c8-87d2-23d04c35a33f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineColor="#6F6F6F"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="6" y="15" width="560" height="1" uuid="d2184d4c-c790-4a92-b319-7d7d87211623">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineColor="#6F6F6F"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="6" y="268" width="560" height="1" uuid="f5cf8e97-e139-4b15-866b-0f9ad9dc6ce2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineColor="#6F6F6F"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="6" y="2" width="1" height="267" uuid="80393cdb-6653-4da9-99c7-fe39dd172743">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineColor="#6F6F6F"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="566" y="2" width="1" height="267" uuid="64647851-ec6e-4020-9d83-cb8400b43d28">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineColor="#6F6F6F"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="200" y="2" width="1" height="267" uuid="f6cef5c7-baaa-4efc-9a00-a3eded27ed52">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineColor="#6F6F6F"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="390" y="2" width="1" height="267" uuid="4e5a79cb-501b-4d0b-863f-5f09c96d0dc2">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineColor="#6F6F6F"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="7" y="273" width="560" height="37" uuid="8a627f61-4987-4aea-88c5-38b71b3f49cd"/>
+				<textElement>
+					<font fontName="THSarabunNew" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{line10}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>
