@@ -6,10 +6,11 @@ import java.util.Observable;
 import java.util.Observer;
 
 import org.utt.app.common.ObjectData;
+import org.utt.app.common.UserView;
 
 import com.alee.laf.panel.WebPanel;
 
-public class OPDPanel extends WebPanel implements Observer{
+public class OPDPanel extends WebPanel implements Observer,UserView{
 	ObjectData oUserInfo;
     int width,height;
     
@@ -23,6 +24,9 @@ public class OPDPanel extends WebPanel implements Observer{
     }
     public void update(Observable oObservable, Object oObject) {
         oUserInfo = ((ObjectData) oObservable); // cast
+    }
+    public void getData() {
+    	
     }
 
 }
