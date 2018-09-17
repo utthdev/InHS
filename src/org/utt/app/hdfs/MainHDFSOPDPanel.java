@@ -16,22 +16,28 @@
 package org.utt.app.hdfs;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.nio.ByteBuffer;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Vector;
 
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
+import org.apache.hadoop.fs.FileSystem;
 import org.utt.app.common.ObjectData;
+import org.utt.app.ui.ScaledImageLabel;
 import org.utt.app.util.I18n;
 import org.utt.app.util.Setup;
 
@@ -42,11 +48,14 @@ import com.alee.laf.panel.WebPanel;
 import com.alee.laf.scroll.WebScrollPane;
 import com.alee.laf.splitpane.WebSplitPane;
 import com.alee.laf.table.WebTable;
+import com.sun.pdfview.PDFFile;
 
 public class MainHDFSOPDPanel extends WebPanel implements Observer{
 	ObjectData oUserInfo;
     int width,height;
-    WebPanel LeftSection;
+    WebPanel LeftSection,RightSection,MiddleSection,MainSection ;
+    WebPanel right1,mid2,mid1,right2,right21,right22;
+    WebLabel Label_Info,labelImage;
     WebSplitPane split;
     WebAccordion accordion;
     WebButton ButtonPrint;
@@ -88,6 +97,41 @@ public class MainHDFSOPDPanel extends WebPanel implements Observer{
         accordion.addPane ( null, I18n.lang("label.hdfs.ipd"),   getHDFS("ipd",oUserInfo.GetPtHN()));        
         accordion.setMultiplySelectionAllowed ( false );
         LeftSection.add(accordion, BorderLayout.CENTER);
+        
+        MainSection = new WebPanel();
+        MainSection.setPreferredSize(new Dimension((width-(width*2)/10)-200, height));
+        MainSection.setLayout(new BorderLayout(0, 0));
+        split.setRightComponent(MainSection);
+
+        MiddleSection = new WebPanel();
+        MiddleSection.setPreferredSize(new Dimension(width-((width*2)/10-450), height));
+
+        MainSection.add(MiddleSection, BorderLayout.CENTER);
+        MiddleSection.setLayout(new BorderLayout(0, 0));
+
+        mid2 = new WebPanel();
+        mid2.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        mid2.setPreferredSize(new Dimension(width-((width*2)/10-480), height));
+        MiddleSection.add(mid2, BorderLayout.CENTER);
+        mid2.setLayout(new BorderLayout(0, 0));
+        
+        mid1 = new WebPanel();
+        mid1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+        mid1.setPreferredSize(new Dimension(width-((width*2)/10-480), 40));
+        MiddleSection.add(mid1, BorderLayout.NORTH);
+        mid1.setLayout(null);
+        
+        labelImage = new ScaledImageLabel();
+        labelImage.setPreferredSize(new Dimension(16, 16));
+        labelImage.setBounds(5, 14, 16, 16);
+        mid1.add(labelImage);
+
+        Label_Info = Setup.getLabel("", 13, 4, SwingConstants.LEFT);
+        Label_Info.setBounds(20, 18, 300, 15);
+        mid1.add(Label_Info);
+        
+        add(split, BorderLayout.CENTER);
+
     }
     public void update(Observable oObservable, Object oObject) {
         oUserInfo = ((ObjectData) oObservable); // cast
@@ -143,12 +187,33 @@ public class MainHDFSOPDPanel extends WebPanel implements Observer{
 			WebScrollPane scrollPane = new WebScrollPane(table);      
 	        wp.add(scrollPane, BorderLayout.CENTER);
 		}
-		 
-		
-		
-		
-    	
+		 	
     	return wp;
     	
+    }
+    public  void showFilePDF(String filename){
+    	
+    }
+    public void printOPD(String fn){
+    	if(fn.trim().length()==21 || fn.trim().length()==25) {
+    		ByteBuffer buf = null;
+    		String hn=fn.substring(fn.length()-7).trim();
+    		String folderhn=hn.substring(0, 2).trim();	
+    		String path1="/utth/"+folderhn+"/"+hn;
+
+    		FileSystem fs=null;
+    		PDFFile pdffile;
+    	}
+    }
+    public void setPermissionImg(String ch1) {
+    	if(ch1.equals("00")) {
+        	labelImage.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/unlock.png")));
+        }
+        else if(ch1.equals("01")) {
+        	labelImage.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/unlock.png")));
+        }
+        else if(ch1.equals("02")) {
+        	labelImage.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/lock.png")));
+        }  	
     }
 }

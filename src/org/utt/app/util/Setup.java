@@ -41,4 +41,48 @@ public class Setup {
         label.setFont(new Font("Tahoma", type, fwidth));
         return label;
     }
+    
+    //caldendar
+    public static String getMonthShortThaiName(String month){
+        String currentMonth=month;
+        String currentMonthThaiName="";
+        if(currentMonth.equals("01")){
+            currentMonthThaiName="ม.ค.";
+        }
+        else if(currentMonth.equals("02")){
+            currentMonthThaiName="ก.พ.";
+        }
+        else if(currentMonth.equals("03")){
+            currentMonthThaiName="มี.ค.";
+        }
+        else if(currentMonth.equals("04")){
+            currentMonthThaiName="เม.ย.";
+        }
+        else if(currentMonth.equals("05")){
+            currentMonthThaiName="พ.ค.";
+        }
+        else if(currentMonth.equals("06")){
+            currentMonthThaiName="มิ.ย.";
+        }
+        else if(currentMonth.equals("07")){
+            currentMonthThaiName="ก.ค.";
+        }
+        else if(currentMonth.equals("08")){
+            currentMonthThaiName="ส.ค.";
+        }
+        else if(currentMonth.equals("09")){
+            currentMonthThaiName="ก.ย.";
+        }
+        else if(currentMonth.equals("10")){
+            currentMonthThaiName="ต.ค.";
+        }
+        else if(currentMonth.equals("11")){
+            currentMonthThaiName="พ.ย.";
+        }
+        else if(currentMonth.equals("12")){
+            currentMonthThaiName="ธ.ค.";
+        }
+        return currentMonthThaiName;
+    }
+    
 }
