@@ -20,13 +20,22 @@ import java.awt.Dimension;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.ImageIcon;
+
 import org.utt.app.common.ObjectData;
 
 import com.alee.laf.panel.WebPanel;
+import com.alee.laf.splitpane.WebSplitPane;
+import com.alee.laf.tabbedpane.WebTabbedPane;
 
 public class IPDPanel extends WebPanel implements Observer{
 	ObjectData oUserInfo;
     int width,height;
+    WebSplitPane split,splitR;
+    WebPanel leftPanel,midPanel,topMainPanel;
+    WebTabbedPane tabbedPane;
+    
+    NurseFormIPD nurseFormIPD;
     
     public IPDPanel(ObjectData oUserInfo,int w,int h) {
     	this.oUserInfo=oUserInfo;
@@ -35,13 +44,49 @@ public class IPDPanel extends WebPanel implements Observer{
         setLayout(new BorderLayout(0, 0));
         setPreferredSize(new Dimension(width, height));
         setBounds(0, 0, width, height);
+        split = new WebSplitPane(split.HORIZONTAL_SPLIT);
+        split.setDividerLocation((width*2)/10);
+        splitR = new WebSplitPane(split.VERTICAL_SPLIT);
+        splitR.setDividerLocation(140);
+        
+        nurseFormIPD = new NurseFormIPD(oUserInfo,w,h);
+        
+        setTop();
+        setLeft();
+        setRight();
+
+        add(split, BorderLayout.CENTER);
+        split.setRightComponent(splitR);
+        split.setLeftComponent(leftPanel);
+        split.setOneTouchExpandable(true);
+        splitR.setTopComponent(topMainPanel);
+        splitR.setBottomComponent(midPanel);
     }
     public void update(Observable oObservable, Object oObject) {
     	oUserInfo = ((ObjectData) oObservable); // cast
     }
     public void initForm() {
-        //getData();
-        //nurseFormIPD.setComboBox();
+        getData();
+        nurseFormIPD.setComboBox();
+    }
+    public void setTop(){
+    	
+    }
+    public void setLeft(){
+    	
+    }
+    public void setRight(){
+    	midPanel = new WebPanel();
+		midPanel.setLayout(new BorderLayout(0, 0));
+		midPanel.setPreferredSize(new Dimension(width-((width*2)/10), height-160));
+		
+		tabbedPane = new WebTabbedPane();
+        midPanel.add(tabbedPane, BorderLayout.CENTER);
+        tabbedPane.addTab(" Nurse FORM ",new ImageIcon(getClass().getClassLoader().getResource("images/list_unordered.gif")) ,nurseFormIPD);
+
+    }
+    public void getData() {
+    	
     }
 
 }
