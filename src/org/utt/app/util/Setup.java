@@ -95,6 +95,77 @@ public class Setup {
         label.setFont(font.deriveFont(attributes));
     }
     //caldendar
+    public static String DateInDBMSSQL(String date){
+        String dateInDBMSSQL="";
+        String Date_from=date;
+        String Month_from=date;
+        String Year_from=date;
+        String year =Year_from.substring(0, 4);
+        String month=Month_from.substring(5, 7);
+        String day=Date_from.substring(8);
+        int db_year=Integer.parseInt(year)-543 ;
+        dateInDBMSSQL=db_year+"-"+month+"-"+day;
+        return dateInDBMSSQL;
+    }
+    public static String ShowThaiDate(String date){
+        String DateThai="",day="";
+        String Date_from=date;
+        String Month_from=date;
+        String Year_from=date;
+        String year =Year_from.substring(0, 4);
+        String month=Month_from.substring(5, 7);
+        String day1=Date_from.substring(8).trim();
+        if(day1.substring(0,1).equals("0")){
+            day=day1.substring(1);
+        }else{
+            day=day1;
+        }
+        DateThai=day+" "+getMonthThaiName2(month)+" พ.ศ. "+year;
+
+        return DateThai;
+    }
+    public static String getMonthThaiName2(String month){
+
+        String currentMonth=month;
+        String currentMonthThaiName="";
+        if(currentMonth.equals("01")){
+            currentMonthThaiName="มกราคม";
+        }
+        else if(currentMonth.equals("02")){
+            currentMonthThaiName="กุมภาพันธ์";
+        }
+        else if(currentMonth.equals("03")){
+            currentMonthThaiName="มีนาคม";
+        }
+        else if(currentMonth.equals("04")){
+            currentMonthThaiName="เมษายน";
+        }
+        else if(currentMonth.equals("05")){
+            currentMonthThaiName="พฤษภาคม";
+        }
+        else if(currentMonth.equals("06")){
+            currentMonthThaiName="มิถุนายน";
+        }
+        else if(currentMonth.equals("07")){
+            currentMonthThaiName="กรกฎาคม";
+        }
+        else if(currentMonth.equals("08")){
+            currentMonthThaiName="สิงหาคม";
+        }
+        else if(currentMonth.equals("09")){
+            currentMonthThaiName="กันยายน";
+        }
+        else if(currentMonth.equals("10")){
+            currentMonthThaiName="ตุลาคม";
+        }
+        else if(currentMonth.equals("11")){
+            currentMonthThaiName="พฤศจิกายน";
+        }
+        else if(currentMonth.equals("12")){
+            currentMonthThaiName="ธันวาคม";
+        }
+        return currentMonthThaiName;
+    }
     public static String getMonthShortThaiName(String month){
         String currentMonth=month;
         String currentMonthThaiName="";
@@ -137,6 +208,14 @@ public class Setup {
         return currentMonthThaiName;
     }
     //person
+    public static String LOSInDayNow(String admDatein){
+    	String age="";
+		LocalDate admDate = new LocalDate (admDatein);          //Birth date
+		LocalDate now = new LocalDate();                    //Today's date
+        Period period = new Period(admDate, now, PeriodType.yearMonthDay());
+        int age_day=period.getDays();
+		return age=age_day+"";
+    }
     public static String AgeInAll(String birthday){
         String age="";
         LocalDate birthdate = new LocalDate(birthday);          //Birth date

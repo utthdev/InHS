@@ -216,4 +216,40 @@ public class MainHDFSOPDPanel extends WebPanel implements Observer{
         	labelImage.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/lock.png")));
         }  	
     }
+    public void clear(){
+    	table.setModel(fetchDataClear());
+		TableColumnModel columnModel = table.getColumnModel();		
+		columnModel.getColumn(0).setPreferredWidth(40);
+		columnModel.getColumn(1).setPreferredWidth(220);
+		columnModel.getColumn(2).setPreferredWidth(0);
+		columnModel.getColumn(2).setMinWidth(0);
+		columnModel.getColumn(2).setMaxWidth(0);
+		((DefaultTableModel)table.getModel()).fireTableDataChanged();
+    	table3.setModel(fetchData3Clear());
+		TableColumnModel columnModel3 = table3.getColumnModel();		
+		columnModel3.getColumn(0).setPreferredWidth(40);
+		columnModel3.getColumn(1).setPreferredWidth(220);
+		columnModel3.getColumn(2).setPreferredWidth(0);
+		columnModel3.getColumn(2).setMinWidth(0);
+		columnModel3.getColumn(2).setMaxWidth(0);
+		((DefaultTableModel)table3.getModel()).fireTableDataChanged();
+		tablescope.setModel(fetchDataScopeClear());
+		TableColumnModel columnModelscope = tablescope.getColumnModel();		
+		columnModelscope.getColumn(0).setPreferredWidth(40);
+		columnModelscope.getColumn(1).setPreferredWidth(220);
+		columnModelscope.getColumn(2).setPreferredWidth(0);
+		columnModelscope.getColumn(2).setMinWidth(0);
+		columnModelscope.getColumn(2).setMaxWidth(0);
+		((DefaultTableModel)tablescope.getModel()).fireTableDataChanged();
+		tree1.setModel(getDefaultTreeModel("")); 
+		tree2.setModel(getDefaultTreeModel("")); 
+		
+		fn="";
+		Label_Info.setText("");
+		labelImage.setIcon(null);
+		mid2.removeAll();
+		mid2.revalidate();
+	    mid2.repaint();
+
+    }
 }

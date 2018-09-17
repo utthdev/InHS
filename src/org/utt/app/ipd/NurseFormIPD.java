@@ -150,6 +150,10 @@ public class NurseFormIPD extends WebPanel implements Observer,ActionListener{
     	 
     }
     public void setInit(){
+    	cbRow1.removeAllItems();
+    	cbRow2.removeAllItems();
+    	cbDR.removeAllItems();
+    	
     	String[] parts=null;
 		parts = InApp.userappcode.split("\\,");
 		String sql_user1="",sql_user="";
