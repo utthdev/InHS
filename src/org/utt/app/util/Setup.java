@@ -19,6 +19,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.util.Locale;
 
+import org.joda.time.LocalDate;
+import org.joda.time.Period;
+import org.joda.time.PeriodType;
+
 import com.alee.laf.label.WebLabel;
 import com.alee.laf.text.WebTextField;
 
@@ -124,6 +128,25 @@ public class Setup {
             currentMonthThaiName="ธ.ค.";
         }
         return currentMonthThaiName;
+    }
+    //person
+    public static String AgeInAll(String birthday){
+        String age="";
+        LocalDate birthdate = new LocalDate(birthday);          //Birth date
+        LocalDate now = new LocalDate();                    //Today's date
+        Period period = new Period(birthdate, now, PeriodType.yearMonthDay());
+        int age_year=period.getYears();
+        int age_month=period.getMonths();
+        int age_day=period.getDays();
+        return age=age_year+" ปี "+age_month+" เดือน "+age_day+" วัน";
+    }
+    public static String AgeInYear(String birthday){
+        String age="";
+        LocalDate birthdate = new LocalDate (birthday);          //Birth date
+        LocalDate now = new LocalDate();                    //Today's date
+        Period period = new Period(birthdate, now, PeriodType.yearMonthDay());
+        int age_year=period.getYears();
+        return age=age_year+"";
     }
     
 }
