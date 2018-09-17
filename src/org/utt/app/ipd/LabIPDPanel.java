@@ -16,7 +16,10 @@
 package org.utt.app.ipd;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,13 +28,19 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Vector;
 
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
 import org.utt.app.common.ObjectData;
 import org.utt.app.dao.DBmanager;
+import org.utt.app.util.I18n;
+import org.utt.app.util.Setup;
 
 import com.alee.extended.panel.WebAccordion;
+import com.alee.laf.button.WebButton;
 import com.alee.laf.label.WebLabel;
 import com.alee.laf.panel.WebPanel;
 import com.alee.laf.scroll.WebScrollPane;
@@ -60,9 +69,69 @@ public class LabIPDPanel extends WebPanel implements Observer{
         setBounds(0, 0, width, height);
         
         getLabValueName();
+        
+        split = new WebSplitPane(split.HORIZONTAL_SPLIT);
+        split.setDividerLocation(300);
+        LeftSection = new WebPanel();
+		LeftSection.setPreferredSize(new Dimension(300, height-175));
+		split.setLeftComponent(LeftSection);
+		LeftSection.setLayout(new BorderLayout(0, 0));
+		
+		WebLabel label = Setup.getLabel(I18n.lang("label.lab"), 13, 4, SwingConstants.CENTER);
+		LeftSection.add(label, BorderLayout.NORTH);
+		
+		bottomPanelForm = new WebPanel();
+		bottomPanelForm.setBackground(Setup.getColor());
+        LeftSection.add(bottomPanelForm, BorderLayout.SOUTH);
+        bottomPanelForm.setLayout(null);
+        bottomPanelForm.setPreferredSize(new Dimension((width*2)/10, 20));
+        WebButton ButtonRefreshForm = new WebButton(I18n.lang("label.refresh"));
+        ButtonRefreshForm.setBackground(Setup.getColor());
+        ButtonRefreshForm.setForeground(UIManager.getColor("Button.darkShadow"));
+
+        ButtonRefreshForm.addActionListener(new ActionListener() {
+           public void actionPerformed(ActionEvent e) {
+           	 getReq();
+           }
+        });
+        ButtonRefreshForm.setBounds(((width*2)/20-45), 1, 90, 20);
+        bottomPanelForm.add(ButtonRefreshForm);
+        
+        MainSection = new WebPanel();
+        MainSection.setPreferredSize(new Dimension((width-(width*2)/10)-200, height));
+        MainSection.setLayout(new BorderLayout(0, 0));
+        split.setRightComponent(MainSection);
+
+        MiddleSection = new WebPanel();
+        MiddleSection.setPreferredSize(new Dimension(width-((width*2)/10-450), height));
+
+        MainSection.add(MiddleSection, BorderLayout.CENTER);
+        MiddleSection.setLayout(new BorderLayout(0, 0));
+
+        mid2 = new WebPanel();
+        mid2.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        mid2.setPreferredSize(new Dimension(width-((width*2)/10-480), height));
+        MiddleSection.add(mid2, BorderLayout.CENTER);
+        mid2.setLayout(new BorderLayout(0, 0));
+
+
+        mid1 = new WebPanel();
+        mid1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+        mid1.setPreferredSize(new Dimension(width-((width*2)/10-480), 40));
+        MiddleSection.add(mid1, BorderLayout.NORTH);
+        mid1.setLayout(null);
+        
+        Label_Info = Setup.getLabel("", 13, 4, SwingConstants.LEFT);
+        Label_Info.setBounds(20, 18, 300, 15);
+        mid1.add(Label_Info);
+
+        
     }
     public void update(Observable oObservable, Object oObject) {
         oUserInfo = ((ObjectData) oObservable); // cast
+    }
+    public void getReq() {
+    	
     }
     public void getLabValueName(){
 		int p=0;
