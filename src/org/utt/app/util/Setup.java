@@ -23,6 +23,47 @@ import com.alee.laf.label.WebLabel;
 import com.alee.laf.text.WebTextField;
 
 public class Setup {
+	public static final double CM_PER_INCH = 0.393700787d;
+	public static final double INCH_PER_CM = 2.545d;
+	public static final double INCH_PER_MM = 25.45d;
+	/**
+	 * Converts the given pixels to cm's based on the supplied DPI
+	 *
+	 * @param pixels
+	 * @param dpi
+	 * @return
+	 */
+	public static double pixelsToCms(double pixels, double dpi) {
+	    return inchesToCms(pixels / dpi);
+	}
+	/**
+	 * Converts the given cm's to pixels based on the supplied DPI
+	 *
+	 * @param cms
+	 * @param dpi
+	 * @return
+	 */
+	public static double cmsToPixel(double cms, double dpi) {
+	    return cmToInches(cms) * dpi;
+	}
+	/**
+	 * Converts the given cm's to inches
+	 *
+	 * @param cms
+	 * @return
+	 */
+	public static double cmToInches(double cms) {
+	    return cms * CM_PER_INCH;
+	}
+	/**
+	 * Converts the given inches to cm's
+	 *
+	 * @param inch
+	 * @return
+	 */
+	public static double inchesToCms(double inch) {
+	    return inch * INCH_PER_CM;
+	}
 	public static void setLocale(){
         String[] parts = Prop.getProperty("app.locale").split("_");
         Locale.setDefault(new Locale(parts[0],parts[1]));
