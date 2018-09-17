@@ -28,6 +28,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Properties;
@@ -46,9 +47,11 @@ import javax.swing.table.TableColumnModel;
 import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
+import org.utt.app.InApp;
 import org.utt.app.common.ObjectData;
 import org.utt.app.dao.DBmanager;
 import org.utt.app.dao.SetupSQL;
+import org.utt.app.hdfs.MainHDFSOPDPanel;
 import org.utt.app.ui.ScaledImageLabel;
 import org.utt.app.util.DateLabelFormatter;
 import org.utt.app.util.I18n;
@@ -87,6 +90,8 @@ public class IPDPanel extends WebPanel implements Observer{
     JDatePickerImpl picker;
     
     NurseFormIPD nurseFormIPD;
+    MainHDFSOPDPanel mainHDFSOPDPanel;
+    LabIPDPanel labIPDPanel;
     
     public IPDPanel(ObjectData oUserInfo,int w,int h) {
     	this.oUserInfo=oUserInfo;
@@ -101,6 +106,8 @@ public class IPDPanel extends WebPanel implements Observer{
         splitR.setDividerLocation(140);
         
         nurseFormIPD = new NurseFormIPD(oUserInfo,w,h);
+        mainHDFSOPDPanel =new MainHDFSOPDPanel(oUserInfo,w,h);
+        labIPDPanel =new LabIPDPanel(oUserInfo,w,h);
         
         setTop();
         setLeft();
@@ -440,7 +447,9 @@ public class IPDPanel extends WebPanel implements Observer{
 		tabbedPane = new WebTabbedPane();
         midPanel.add(tabbedPane, BorderLayout.CENTER);
         tabbedPane.addTab(" Nurse FORM ",new ImageIcon(getClass().getClassLoader().getResource("images/list_unordered.gif")) ,nurseFormIPD);
-
+        tabbedPane.addTab("EMR ",new ImageIcon(getClass().getClassLoader().getResource("images/list_unordered.gif")) ,mainHDFSOPDPanel);
+        tabbedPane.addTab("LAB" ,new ImageIcon(getClass().getClassLoader().getResource("images/list_unordered.gif")),labIPDPanel);
+        
     }
     public void getData() {
     	table.setModel(fetchDataIPD());
@@ -515,6 +524,100 @@ public class IPDPanel extends WebPanel implements Observer{
             e.printStackTrace();
         }
         return new DefaultTableModel(data, columnNames);
+    }
+    public void searchAN(String an,String hn){
+    	Connection conn;
+		PreparedStatement stmt,stmt1,stmt2,stmt3;
+		ResultSet rs,rs1,rs2,rs3;
+		
+		String query_db=SetupSQL.getDOB(hn); 
+		String query_right=SetupSQL.getRight(an); 
+		String query_ref=SetupSQL.getCID(hn) ; 
+		
+		conn=new DBmanager().getConnMSSql();	 
+		try {
+			stmt = conn.prepareStatement(query_db);
+			rs = stmt.executeQuery();
+			while (rs.next()) {
+				String  right="";
+				if(rs.getString(1) !=null){
+					Date birthday=rs.getDate(1);
+					String age_pt=Setup.AgeInAll(birthday.toString()).trim();
+					oUserInfo.setPtAge(age_pt);
+				}		
+				
+			}
+			stmt.close();
+			//
+			stmt1 = conn.prepareStatement(query_right);
+			
+			rs1 = stmt1.executeQuery();
+			while (rs1.next()) {
+				String  right="";				
+				if(rs1.getString(1) !=null){
+					for(int i=0;i<IPDFrame.rightname.length;i++){
+						if(rs1.getString(1).trim().equals(IPDFrame.rightname[i][0])){
+							right=IPDFrame.rightname[i][1];
+							break;
+						}
+					}
+					oUserInfo.setRightCode(right+"("+rs1.getString(1).trim()+")");
+				}
+							
+			}
+			stmt1.close();
+			//
+			stmt2 = conn.prepareStatement(query_ref);
+			rs2 = stmt2.executeQuery();
+			while (rs2.next()) {			
+				if(rs2.getString(1) !=null){
+					oUserInfo.setPtCID(rs2.getString(1).trim());
+				}
+							
+			}
+			stmt2.close();
+			//
+			String sql_allergy=SetupSQL.memo;
+			stmt3 = conn.prepareStatement(sql_allergy);
+			stmt3.setString(1, hn);
+			rs3 = stmt3.executeQuery();
+			String memo1="",memo2="";
+			while (rs3.next()) {
+				if(rs3.getString(1)!=null){
+					memo1+=rs3.getString(1).trim()+"\n";
+				}
+			}
+			rs3.close();
+			stmt3.close();
+			
+			for(int i=0;i<IPDFrame.hn_z515.length;i++){
+				if(hn.equals(IPDFrame.hn_z515[i])){
+					memo2="Z515";
+					break;
+				}
+			}		 
+			oUserInfo.setMemo(memo1);
+			oUserInfo.setMemo1(memo2);
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    }
+    public void clearValue(){
+        oUserInfo.setPtAN("");
+        oUserInfo.setPtName("");
+        oUserInfo.setPtHN("");
+        oUserInfo.setRightCode("");
+        oUserInfo.setPtBed("");
+        oUserInfo.setPtWard("");
+        oUserInfo.setPtAge("");
+        oUserInfo.setPtLabel("");
+        oUserInfo.setPtCID("");
+        oUserInfo.setMemo("");
+        oUserInfo.setMemo1("");
+        oUserInfo.setAdmtime("");
+        mainHDFSOPDPanel.clear();
+        labIPDPanel.clearPanel();
     }
 
 }
