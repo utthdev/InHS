@@ -90,7 +90,6 @@ public class NurseFormIPD extends WebPanel implements Observer,ActionListener{
         ButtonRefreshForm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
             	getDataForm();
-            	setInit();
             }
         });
         ButtonRefreshForm.setBounds(55, 1, 90, 20);

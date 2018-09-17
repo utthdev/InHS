@@ -17,7 +17,9 @@ package org.utt.app.util;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.font.TextAttribute;
 import java.util.Locale;
+import java.util.Map;
 
 import org.joda.time.LocalDate;
 import org.joda.time.Period;
@@ -86,7 +88,12 @@ public class Setup {
         label.setFont(new Font("Tahoma", type, fwidth));
         return label;
     }
-    
+    public static void SetUnderline(WebLabel label){
+        Font font = label.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        label.setFont(font.deriveFont(attributes));
+    }
     //caldendar
     public static String getMonthShortThaiName(String month){
         String currentMonth=month;

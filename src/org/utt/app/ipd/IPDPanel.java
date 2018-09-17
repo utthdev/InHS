@@ -16,7 +16,9 @@
 package org.utt.app.ipd;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
@@ -26,15 +28,18 @@ import java.util.Properties;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 import org.utt.app.common.ObjectData;
+import org.utt.app.ui.ScaledImageLabel;
 import org.utt.app.util.DateLabelFormatter;
 import org.utt.app.util.I18n;
 import org.utt.app.util.Setup;
 
+import com.alee.laf.button.WebButton;
 import com.alee.laf.label.WebLabel;
 import com.alee.laf.panel.WebPanel;
 import com.alee.laf.scroll.WebScrollPane;
@@ -53,6 +58,8 @@ public class IPDPanel extends WebPanel implements Observer{
     WebLabel Label_AN,Label_HN,Label_CID,Label_NAME,Label_Memo,Label_Extra,Label_Extra1,Label_LOS,labelImage;
     WebTextField TextField_AN,TextField_HN,TextField_CID;
     WebTextArea textArea;
+    WebButton ButtonSmartcard;
+    WebScrollPane scrollPaneDrugA;
     JDatePickerImpl picker;
     
     NurseFormIPD nurseFormIPD;
@@ -153,7 +160,7 @@ public class IPDPanel extends WebPanel implements Observer{
         dateSearch=picker.getModel().getYear()+"-"+month+"-"+day;
         oUserInfo.setPtVisitdate(dateSearch.trim());
         
-        Label_AN = Setup.getLabel("AN", 13,4,SwingConstants.RIGHT);
+        Label_AN = Setup.getLabel(I18n.lang("label.an"), 13,4,SwingConstants.RIGHT);
         Label_AN.setBounds(270, 12, 20, 14);
 		pt_info.add(Label_AN);
 		 
@@ -164,7 +171,7 @@ public class IPDPanel extends WebPanel implements Observer{
 		TextField_AN.setBounds(290, 10, 80, 20);
 	
 		
-		Label_HN = Setup.getLabel("HN", 13,4,SwingConstants.RIGHT);
+		Label_HN = Setup.getLabel(I18n.lang("label.hn"), 13,4,SwingConstants.RIGHT);
 		Label_HN.setBounds(390, 12, 20, 14);
 		pt_info.add(Label_HN);
 		
@@ -175,7 +182,7 @@ public class IPDPanel extends WebPanel implements Observer{
 		pt_info.add(TextField_HN);
 
 		
-		Label_CID = Setup.getLabel("ID", 13,4,SwingConstants.RIGHT);
+		Label_CID = Setup.getLabel(I18n.lang("label.id"), 13,4,SwingConstants.RIGHT);
 		Label_CID.setBounds(510, 12, 20, 14);
 		pt_info.add(Label_CID);
 		
@@ -187,7 +194,7 @@ public class IPDPanel extends WebPanel implements Observer{
 		pt_info.add(TextField_CID);
 
 		
-		Label_NAME = Setup.getLabel("ชื่อ", 13,4,SwingConstants.LEFT);
+		Label_NAME = Setup.getLabel(I18n.lang("label.name"), 13,4,SwingConstants.LEFT);
 		Label_NAME.setBounds(4, 30, (width-((width*2)/10)-40), 30);
 		pt_info.add(Label_NAME);
 		
@@ -204,14 +211,14 @@ public class IPDPanel extends WebPanel implements Observer{
 		scrollPaneDrugA.setBounds(70, 70, 500, 40);
 		pt_info.add(scrollPaneDrugA);
 		
-		Label_Memo = Setup.getLabel("การแพ้ยา", 13,4,SwingConstants.LEFT);
+		Label_Memo = Setup.getLabel(I18n.lang("label.drugallergy"), 13,4,SwingConstants.LEFT);
 		Label_Memo.setForeground(new Color(255, 0, 0));
 		Label_Memo.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		Label_Memo.setBackground(Setup.getColor());
 		Label_Memo.setBounds(10, 65, 55, 30);
 		pt_info.add(Label_Memo);
 		
-		Label_Extra = Setup.getLabel("ข้อมูลเพิ่มเติม", 13,4,SwingConstants.LEFT);
+		Label_Extra = Setup.getLabel(I18n.lang("label.extra"), 13,4,SwingConstants.LEFT);
 		Setup.SetUnderline(Label_Extra);
 		Label_Extra.setBounds(10, 110, 150, 30);
 		Label_Extra.setBackground(Setup.getColor());
@@ -223,14 +230,13 @@ public class IPDPanel extends WebPanel implements Observer{
 		Label_Extra1.setBackground(Setup.getColor());
 		pt_info.add(Label_Extra1);
 		
-		Label_LOS = Setup.getLabel("LOS", 13,4,SwingConstants.RIGHT);
+		Label_LOS = Setup.getLabel(I18n.lang("label.los"), 13,4,SwingConstants.RIGHT);
 		Label_LOS.setHorizontalAlignment(SwingConstants.LEFT);
 		Label_LOS.setBounds(697, 12, 200, 14);
 		pt_info.add(Label_LOS);
 		
 		labelImage = new ScaledImageLabel();
         labelImage.setPreferredSize(new Dimension(140, 140));
-        //labelImage.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/no_img.png")));
         labelImage.setBounds(width-(((width*2)/10)+200), 1, 140, 140);
         pt_info.add(labelImage);
         
@@ -238,13 +244,11 @@ public class IPDPanel extends WebPanel implements Observer{
         if(oUserInfo.GetPtAN().equals("")) {
         	labelImage.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/no_img.png")));				 			
 		}else {
-			System.out.println(oUserInfo.GetPtHN());
-			labelImage.setIcon(new ImageIcon(previewPDFDocumentInImage(oUserInfo.GetPtHN())));
-		}
+			//System.out.println(oUserInfo.GetPtHN());
+			//labelImage.setIcon(new ImageIcon(previewPDFDocumentInImage(oUserInfo.GetPtHN())));
+		}      
         
-        
-        
-        ButtonSmartcard = new WebButton("อ่านข้อมูลจากบัตร");
+        ButtonSmartcard = new WebButton(I18n.lang("text.readsmartcard"));
         ButtonSmartcard.setBackground(Setup.getColor());
         ButtonSmartcard.setForeground(UIManager.getColor("Button.darkShadow"));
 
@@ -254,12 +258,6 @@ public class IPDPanel extends WebPanel implements Observer{
                 //getSmartcard();
                //sendImageHDFS(oUserInfo.GetPtCID());
             }
-
-			@Override
-			public void actionPerformed(java.awt.event.ActionEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
         });
         ButtonSmartcard.setBounds(700, 70, 150, 25);
         //pt_info.add(ButtonSmartcard);
