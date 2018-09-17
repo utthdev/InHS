@@ -15,6 +15,10 @@
  ******************************************************************************/
 package org.utt.app;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Insets;
+import java.awt.Toolkit;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.sql.Connection;
@@ -22,15 +26,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+
 import org.utt.app.dao.DBmanager;
 import org.utt.app.dao.SetupSQL;
 import org.utt.app.util.I18n;
 import org.utt.app.util.Prop;
 
+import com.alee.laf.desktoppane.WebDesktopPane;
 import com.alee.laf.optionpane.WebOptionPane;
 import com.alee.laf.rootpane.WebFrame;
 
 public class InApp extends WebFrame{
+	Dimension screen;
+    int taskBarsize;
 	public final static String version =I18n.lang("label.version");
     public  static String ip = "";
     public  static String username = "";
@@ -40,6 +50,8 @@ public class InApp extends WebFrame{
     public  static String userposition = "";
     public  static String cliniccode = "";
     public  static String reportcode = "";
+    
+    WebDesktopPane desktopPane;
 	public InApp() {
 		try {
             InetAddress ipcom= InetAddress.getLocalHost();
@@ -48,6 +60,18 @@ public class InApp extends WebFrame{
             e1.printStackTrace();
         }
         checkIP(ip);
+        desktopPane = new WebDesktopPane();
+        screen = Toolkit.getDefaultToolkit().getScreenSize();
+        Insets scnMax = Toolkit.getDefaultToolkit().getScreenInsets(getGraphicsConfiguration());
+        taskBarsize = scnMax.bottom;
+        setPreferredSize(new Dimension(screen.width, screen.height-taskBarsize));
+        setBounds(0, 0, screen.width, screen.height-taskBarsize);
+
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setTitle(I18n.lang("desktop.title")+"  :  "+I18n.lang("label.version"));
+        ImageIcon img = new ImageIcon(getClass().getClassLoader().getResource("images/inlogo.png"));
+        setIconImage ( img.getImage());
+        getContentPane().add(desktopPane, BorderLayout.CENTER);
 	}
 	public void checkIP(String ipUser){
         int passport=0;
