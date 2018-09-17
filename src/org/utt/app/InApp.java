@@ -84,6 +84,8 @@ public class InApp extends WebFrame implements ActionListener{
     public  static String cliniccode = "";
     public  static String reportcode = "";
     
+    public static int mainWidth=800;
+    
     WebDesktopPane desktopPane;
     Dimension screen;
     int taskBarsize;
@@ -123,8 +125,8 @@ public class InApp extends WebFrame implements ActionListener{
         screen = Toolkit.getDefaultToolkit().getScreenSize();
         Insets scnMax = Toolkit.getDefaultToolkit().getScreenInsets(getGraphicsConfiguration());
         taskBarsize = scnMax.bottom;
-        setPreferredSize(new Dimension(screen.width, screen.height-taskBarsize));
-        setBounds(0, 0, screen.width, screen.height-taskBarsize);
+        setPreferredSize(new Dimension(mainWidth, screen.height-taskBarsize));
+        setBounds(0, 0, mainWidth, screen.height-taskBarsize);
 
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setTitle(I18n.lang("desktop.title")+"  :  "+I18n.lang("label.version"));
@@ -268,13 +270,13 @@ public class InApp extends WebFrame implements ActionListener{
     }
     public WebPanel getToolBar() {
         toolbarPanel = new WebPanel();
-        toolbarPanel.setPreferredSize(new Dimension(screen.width-80, 30));
+        toolbarPanel.setPreferredSize(new Dimension(mainWidth-80, 30));
         toolbarPanel.setBackground(Setup.getColor());
         toolbarPanel.setLayout(null);   
         toolBar = new WebToolBar();
         toolBar.setFloatable(false);
         toolBar.setBackground(Setup.getColor());
-        toolBar.setBounds(1, 1, screen.width-80, 30);
+        toolBar.setBounds(1, 1, mainWidth-80, 30);
         toolbarPanel.add(toolBar);
 
         return toolbarPanel;
@@ -295,7 +297,7 @@ public class InApp extends WebFrame implements ActionListener{
                 if(kbFrame !=null) {
                     kbFrame.setVisible(true);
                 }else {
-                    kbFrame = new KbFrame(screen.width, screen.height-taskBarsize);
+                    kbFrame = new KbFrame(mainWidth, screen.height-taskBarsize);
                     desktopPane.add(kbFrame);
                     kbFrame.setVisible(true);
                     try {
@@ -473,7 +475,7 @@ public class InApp extends WebFrame implements ActionListener{
                                 if(dentalFrame !=null) {
                                     dentalFrame.setVisible(true);
                                 }else {
-                                    dentalFrame = new DentalFrame(screen.width, screen.height-taskBarsize);
+                                    dentalFrame = new DentalFrame(mainWidth, screen.height-taskBarsize);
                                     desktopPane.add(dentalFrame);
                                     dentalFrame.setVisible(true);
                                     try {
@@ -488,7 +490,7 @@ public class InApp extends WebFrame implements ActionListener{
                                 if(dentalCommFrame !=null) {
                                     dentalCommFrame.setVisible(true);
                                 }else {
-                                    dentalCommFrame = new DentalCommFrame(screen.width, screen.height-taskBarsize);
+                                    dentalCommFrame = new DentalCommFrame(mainWidth, screen.height-taskBarsize);
                                     desktopPane.add(dentalCommFrame);
                                     dentalCommFrame.setVisible(true);
                                     try {
@@ -503,7 +505,7 @@ public class InApp extends WebFrame implements ActionListener{
                                 if(dentalReportFrame !=null) {
                                     dentalReportFrame.setVisible(true);
                                 }else {
-                                    dentalReportFrame = new DentalReportFrame(screen.width, screen.height-taskBarsize);
+                                    dentalReportFrame = new DentalReportFrame(mainWidth, screen.height-taskBarsize);
                                     desktopPane.add(dentalReportFrame);
                                     dentalReportFrame.setVisible(true);
                                     try {
@@ -518,7 +520,7 @@ public class InApp extends WebFrame implements ActionListener{
                                 if(ipdFrame !=null) {
                                     ipdFrame.setVisible(true);
                                 }else {
-                                    ipdFrame = new IPDFrame(screen.width, screen.height-taskBarsize);
+                                    ipdFrame = new IPDFrame(mainWidth, screen.height-taskBarsize);
                                     ipdFrame.initIPDPanel();
                                     desktopPane.add(ipdFrame);
                                     ipdFrame.setVisible(true);
@@ -536,7 +538,7 @@ public class InApp extends WebFrame implements ActionListener{
                                 }else {
                                 	//create internal db
                                 	initH2OPD();
-                                    opdFrame = new OPDFrame(screen.width, screen.height-taskBarsize);
+                                    opdFrame = new OPDFrame(mainWidth, screen.height-taskBarsize);
                                     desktopPane.add(opdFrame);
                                     opdFrame.setVisible(true);
                                     try {
@@ -551,7 +553,7 @@ public class InApp extends WebFrame implements ActionListener{
                                 if(pharFrame !=null) {
                                 	pharFrame.setVisible(true);
                                 }else {
-                                    pharFrame = new PharFrame(screen.width, screen.height-taskBarsize);
+                                    pharFrame = new PharFrame(mainWidth, screen.height-taskBarsize);
                                     desktopPane.add(pharFrame);
                                     pharFrame.setVisible(true);
                                     try {
@@ -566,7 +568,7 @@ public class InApp extends WebFrame implements ActionListener{
                                 if(adminFrame !=null) {
                                     adminFrame.setVisible(true);
                                 }else {
-                                    adminFrame = new AdminFrame(screen.width, screen.height-taskBarsize);
+                                    adminFrame = new AdminFrame(mainWidth, screen.height-taskBarsize);
 
                                     desktopPane.add(adminFrame);
                                     adminFrame.setVisible(true);
@@ -582,7 +584,7 @@ public class InApp extends WebFrame implements ActionListener{
                                 if( financeFrame !=null) {
                                 	financeFrame.setVisible(true);
                                 }else {
-                                	financeFrame = new FinanceFrame(screen.width, screen.height-taskBarsize);
+                                	financeFrame = new FinanceFrame(mainWidth, screen.height-taskBarsize);
 
                                     desktopPane.add(financeFrame);
                                     financeFrame.setVisible(true);
