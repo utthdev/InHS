@@ -17,12 +17,59 @@ package org.utt.app.util;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.font.TextAttribute;
 import java.util.Locale;
+import java.util.Map;
+
+import org.joda.time.LocalDate;
+import org.joda.time.Period;
+import org.joda.time.PeriodType;
 
 import com.alee.laf.label.WebLabel;
 import com.alee.laf.text.WebTextField;
 
 public class Setup {
+	public static final double CM_PER_INCH = 0.393700787d;
+	public static final double INCH_PER_CM = 2.545d;
+	public static final double INCH_PER_MM = 25.45d;
+	/**
+	 * Converts the given pixels to cm's based on the supplied DPI
+	 *
+	 * @param pixels
+	 * @param dpi
+	 * @return
+	 */
+	public static double pixelsToCms(double pixels, double dpi) {
+	    return inchesToCms(pixels / dpi);
+	}
+	/**
+	 * Converts the given cm's to pixels based on the supplied DPI
+	 *
+	 * @param cms
+	 * @param dpi
+	 * @return
+	 */
+	public static double cmsToPixel(double cms, double dpi) {
+	    return cmToInches(cms) * dpi;
+	}
+	/**
+	 * Converts the given cm's to inches
+	 *
+	 * @param cms
+	 * @return
+	 */
+	public static double cmToInches(double cms) {
+	    return cms * CM_PER_INCH;
+	}
+	/**
+	 * Converts the given inches to cm's
+	 *
+	 * @param inch
+	 * @return
+	 */
+	public static double inchesToCms(double inch) {
+	    return inch * INCH_PER_CM;
+	}
 	public static void setLocale(){
         String[] parts = Prop.getProperty("app.locale").split("_");
         Locale.setDefault(new Locale(parts[0],parts[1]));
@@ -41,4 +88,72 @@ public class Setup {
         label.setFont(new Font("Tahoma", type, fwidth));
         return label;
     }
+    public static void SetUnderline(WebLabel label){
+        Font font = label.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        label.setFont(font.deriveFont(attributes));
+    }
+    //caldendar
+    public static String getMonthShortThaiName(String month){
+        String currentMonth=month;
+        String currentMonthThaiName="";
+        if(currentMonth.equals("01")){
+            currentMonthThaiName="ม.ค.";
+        }
+        else if(currentMonth.equals("02")){
+            currentMonthThaiName="ก.พ.";
+        }
+        else if(currentMonth.equals("03")){
+            currentMonthThaiName="มี.ค.";
+        }
+        else if(currentMonth.equals("04")){
+            currentMonthThaiName="เม.ย.";
+        }
+        else if(currentMonth.equals("05")){
+            currentMonthThaiName="พ.ค.";
+        }
+        else if(currentMonth.equals("06")){
+            currentMonthThaiName="มิ.ย.";
+        }
+        else if(currentMonth.equals("07")){
+            currentMonthThaiName="ก.ค.";
+        }
+        else if(currentMonth.equals("08")){
+            currentMonthThaiName="ส.ค.";
+        }
+        else if(currentMonth.equals("09")){
+            currentMonthThaiName="ก.ย.";
+        }
+        else if(currentMonth.equals("10")){
+            currentMonthThaiName="ต.ค.";
+        }
+        else if(currentMonth.equals("11")){
+            currentMonthThaiName="พ.ย.";
+        }
+        else if(currentMonth.equals("12")){
+            currentMonthThaiName="ธ.ค.";
+        }
+        return currentMonthThaiName;
+    }
+    //person
+    public static String AgeInAll(String birthday){
+        String age="";
+        LocalDate birthdate = new LocalDate(birthday);          //Birth date
+        LocalDate now = new LocalDate();                    //Today's date
+        Period period = new Period(birthdate, now, PeriodType.yearMonthDay());
+        int age_year=period.getYears();
+        int age_month=period.getMonths();
+        int age_day=period.getDays();
+        return age=age_year+" ปี "+age_month+" เดือน "+age_day+" วัน";
+    }
+    public static String AgeInYear(String birthday){
+        String age="";
+        LocalDate birthdate = new LocalDate (birthday);          //Birth date
+        LocalDate now = new LocalDate();                    //Today's date
+        Period period = new Period(birthdate, now, PeriodType.yearMonthDay());
+        int age_year=period.getYears();
+        return age=age_year+"";
+    }
+    
 }
