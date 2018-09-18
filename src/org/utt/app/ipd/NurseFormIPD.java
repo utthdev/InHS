@@ -29,6 +29,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.UIManager;
+import javax.swing.border.TitledBorder;
 
 import org.utt.app.InApp;
 import org.utt.app.common.ObjectData;
@@ -52,8 +53,8 @@ public class NurseFormIPD extends WebPanel implements Observer,ActionListener{
     String name="",an="",hn="",age="",bed="",memo="",cid="";
     String wardcode,department_id,ward_name_short,wardname,department,departmentName,doctor,formward;
     
-    WebButton ButtonPrint;
-    WebPanel LeftSection,bottomPanelForm;
+    WebButton ButtonPrint,ButtonRefreshDr;
+    WebPanel LeftSection,MainSection,RightSection,bottomPanelForm,right1;
     WebComboBox cbDR,cbRow1,cbRow2;
     WebButton ButtonRefreshForm;
     WebSplitPane split;
@@ -94,6 +95,40 @@ public class NurseFormIPD extends WebPanel implements Observer,ActionListener{
         });
         ButtonRefreshForm.setBounds(55, 1, 90, 20);
         bottomPanelForm.add(ButtonRefreshForm);
+        //
+        MainSection = new WebPanel();
+		MainSection.setPreferredSize(new Dimension((width-(width*2)/10)-200, height-160));
+		MainSection.setLayout(new BorderLayout(0, 0));
+		split.setRightComponent(MainSection);
+		add(split, BorderLayout.CENTER);
+		
+		RightSection = new WebPanel();
+		RightSection.setPreferredSize(new Dimension(200, height-160));
+		MainSection.add(RightSection, BorderLayout.EAST);
+		RightSection.setLayout(new BorderLayout(0, 0));
+        right1 = new WebPanel();
+		right1.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		right1.setPreferredSize(new Dimension(200, 150));
+		RightSection.add(right1, BorderLayout.NORTH);
+		right1.setLayout(null);
+        ButtonRefreshDr = new WebButton(I18n.lang("label.refresh"));
+        ButtonRefreshDr.setBackground(Setup.getColor());
+        ButtonRefreshDr.setForeground(UIManager.getColor("Button.darkShadow"));
+
+        ButtonRefreshDr.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+            	getDoctor();
+            }
+        });
+        ButtonRefreshDr.setBounds(100, 15, 80, 20);
+        right1.add(ButtonRefreshDr);
+        cbDR = new WebComboBox();
+		cbDR.setFont(new Font("Tahoma", Font.PLAIN, 13));		 
+		
+		cbDR.setSize(180, 250);
+		cbDR.setBounds(5, 40, 180, 20);
+		right1.add(cbDR);
+		
     }
     public void update(Observable oObservable, Object oObject) {
         oUserInfo = ((ObjectData)oObservable); // cast
@@ -203,7 +238,27 @@ public class NurseFormIPD extends WebPanel implements Observer,ActionListener{
     public void getDataForm(){
     	
     }
-    public void getDoctor() {
-    	
+    @SuppressWarnings("unchecked")
+	public void getDoctor() {
+    	String[] dr=null;
+		dr = doctor.split("\\,");	
+		for(int i=0;i<dr.length;i++){
+			try {
+				 
+				Connection conn=new DBmanager().getConnMySql();
+				String queryDR =  "select  distinct doctor_name from doctor where doctor_id=?" ;
+				PreparedStatement stmtDR = conn.prepareStatement(queryDR);
+				stmtDR.setString(1,dr[i].trim());
+				ResultSet rsDR = stmtDR.executeQuery();			
+				while (rsDR.next()) {	
+					cbDR.addItem(new ComboItem(rsDR.getString(1).trim(),dr[i].trim()));
+				}
+				rsDR.close();
+				stmtDR.close();			
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
     }
 }

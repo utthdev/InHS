@@ -101,7 +101,7 @@ public class IPDPanel extends WebPanel implements Observer{
         setPreferredSize(new Dimension(width, height));
         setBounds(0, 0, width, height);
         split = new WebSplitPane(split.HORIZONTAL_SPLIT);
-        split.setDividerLocation((width*2)/10);
+        split.setDividerLocation(300);
         splitR = new WebSplitPane(split.VERTICAL_SPLIT);
         splitR.setDividerLocation(140);
         
@@ -219,7 +219,7 @@ public class IPDPanel extends WebPanel implements Observer{
 		pt_info.add(TextField_HN);
 
 		
-		Label_CID = Setup.getLabel(I18n.lang("label.id"), 13,4,SwingConstants.RIGHT);
+		Label_CID = Setup.getLabel(I18n.lang("label.cid"), 13,4,SwingConstants.RIGHT);
 		Label_CID.setBounds(510, 12, 20, 14);
 		pt_info.add(Label_CID);
 		

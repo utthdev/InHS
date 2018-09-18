@@ -23,6 +23,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.net.URI;
 import java.nio.ByteBuffer;
 import java.util.Observable;
 import java.util.Observer;
@@ -34,11 +36,19 @@ import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
+import javax.swing.tree.TreeModel;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FSDataInputStream;
+import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
 import org.utt.app.common.ObjectData;
 import org.utt.app.ui.ScaledImageLabel;
 import org.utt.app.util.I18n;
+import org.utt.app.util.Prop;
 import org.utt.app.util.Setup;
 
 import com.alee.extended.panel.WebAccordion;
@@ -48,6 +58,9 @@ import com.alee.laf.panel.WebPanel;
 import com.alee.laf.scroll.WebScrollPane;
 import com.alee.laf.splitpane.WebSplitPane;
 import com.alee.laf.table.WebTable;
+import com.alee.laf.tree.UniqueNode;
+import com.alee.laf.tree.WebTree;
+import com.alee.laf.tree.WebTreeModel;
 import com.sun.pdfview.PDFFile;
 
 public class MainHDFSOPDPanel extends WebPanel implements Observer{
@@ -59,9 +72,13 @@ public class MainHDFSOPDPanel extends WebPanel implements Observer{
     WebSplitPane split;
     WebAccordion accordion;
     WebButton ButtonPrint;
-    WebTable table;
-    Vector<String> columnNames;
-    
+    WebTable table,table3,tablescope;
+    Vector<String> columnNames3,columnNamesscope,columnNames;
+    @SuppressWarnings("rawtypes")
+	WebTree tree1 = new WebTree ( );
+    @SuppressWarnings("rawtypes")
+	WebTree tree2 = new WebTree ( );
+    PDFFile [] pdffile,pdffile1;
     String fn="";
     
     public MainHDFSOPDPanel(ObjectData oUserInfo, int w, int h) {
@@ -216,6 +233,105 @@ public class MainHDFSOPDPanel extends WebPanel implements Observer{
         	labelImage.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/lock.png")));
         }  	
     }
+    public TreeModel getDefaultTreeModel (String hn){
+    	UniqueNode root=null;
+    	if(hn.equals("")) {
+    		root= new UniqueNode ( " "+hn );
+    		 
+		}else {
+			 
+			String folderhn=hn.substring(0, 2).trim();
+			String path1="/utth/"+folderhn+"/"+hn;
+			 
+			FileSystem fs;
+			root= new UniqueNode ( " "+hn );
+			try {
+				UniqueNode parent;
+				int hnNum=0,pdfNum=0;
+				fs = connHDFS();
+				Path newFolderPath= new Path(path1);
+				FileStatus[] fileStatus = fs.listStatus(newFolderPath);
+				for(FileStatus status : fileStatus){
+					String pp=status.getPath().toString().trim();
+					if(pp.length()==52 || pp.length() ==54) {
+						hnNum++;
+					} 
+					 
+				}
+				pdffile = new PDFFile[hnNum];
+				for(FileStatus status : fileStatus){
+					String pp=status.getPath().toString().trim();
+					if(pp.length()==52 || pp.length() ==54) {
+						String f_pp=pp.substring((((Prop.getProperty("hadoop.server")+path1).length())+1), pp.indexOf(".pdf"));
+						//System.out.println(hn+">>"+path1+">>"+folderhn+">>"+f_pp+"-"+pp.length());
+						parent = new UniqueNode (f_pp);
+						pdffile[pdfNum]=getPDF(f_pp,pdfNum);
+						int p=pdffile[pdfNum].getNumPages();
+						for (int i=0;i<p;i++) {
+							parent.add ( new UniqueNode (i+1));
+						}
+						
+						root.add ( parent );
+						pdfNum++;
+						  
+					} 				 
+				}
+				fs.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+    	
+    	return new WebTreeModel<UniqueNode> ( root );
+    }
+    public PDFFile getPDF(String hn,int pdfNum) {
+    	
+    	ByteBuffer buf = null;
+		String folderhn=hn.substring(0, 2).trim();
+		String path1="";
+		if(hn.length()>7) {
+			path1="/utth/"+folderhn+"/"+hn.substring(0, 7);
+		}else {
+			path1="/utth/"+folderhn+"/"+hn;
+		}
+		FileSystem fs=null;
+		try {
+			fs = connHDFS();
+			Path newFolderPath= new Path(path1);
+			Path path = new Path(newFolderPath+"/"+hn.trim()+".pdf");
+			FSDataInputStream in = fs.open(path);
+		    byte[] b= IOUtils.toByteArray(in);
+		    buf = ByteBuffer.wrap(b);			
+			pdffile[pdfNum] = new PDFFile(buf);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		 
+		if(fs !=null) {
+			try {
+				fs.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+    	return pdffile[pdfNum];
+    }
+    public FileSystem connHDFS() {
+    	FileSystem f=null;
+    	
+    	Configuration conf = new Configuration();
+		conf.set("fs.defaultFS", Prop.getProperty("hadoop.server"));
+		System.setProperty("HADOOP_USER_NAME", Prop.getProperty("hadoop.user"));
+		System.setProperty("hadoop.home.dir", Prop.getProperty("hadoop.home.dir"));
+		try {
+			f = FileSystem.get(URI.create(Prop.getProperty("hadoop.server")), conf);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	return f;   	
+    }
     public void clear(){
     	table.setModel(fetchDataClear());
 		TableColumnModel columnModel = table.getColumnModel();		
@@ -252,4 +368,16 @@ public class MainHDFSOPDPanel extends WebPanel implements Observer{
 	    mid2.repaint();
 
     }
+    public  DefaultTableModel fetchDataClear(){		 
+		Vector<Vector<String>> data = new Vector<Vector<String>>();
+		return new DefaultTableModel(data, columnNames);
+	}
+    public  DefaultTableModel fetchData3Clear(){	 
+		Vector<Vector<String>> data = new Vector<Vector<String>>();
+		return new DefaultTableModel(data, columnNames3);
+	}
+    public  DefaultTableModel fetchDataScopeClear()	{
+		Vector<Vector<String>> data = new Vector<Vector<String>>();
+		return new DefaultTableModel(data, columnNamesscope);
+	}
 }

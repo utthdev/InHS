@@ -99,7 +99,7 @@ public class InApp extends WebFrame implements ActionListener{
     WebLabel[] seperator = new WebLabel[]{new WebLabel(":"), new WebLabel(":")};
     WebLabel time_Label,user_Label;
     
-    int SESSION_TIMEOUT = 10 * 1000;
+    int SESSION_TIMEOUT = 1800 * 1000;
 	Timer invalidationTimer = new Timer(SESSION_TIMEOUT, this);
 	
 	KbFrame kbFrame;
