@@ -84,7 +84,7 @@ public class InApp extends WebFrame implements ActionListener{
     public  static String cliniccode = "";
     public  static String reportcode = "";
     
-    public static int mainWidth=800;
+    public static int mainWidth=1200;
     
     WebDesktopPane desktopPane;
     Dimension screen;
@@ -128,7 +128,7 @@ public class InApp extends WebFrame implements ActionListener{
         setPreferredSize(new Dimension(mainWidth, screen.height-taskBarsize));
         setBounds(0, 0, mainWidth, screen.height-taskBarsize);
 
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setExtendedState(JFrame.MAXIMIZED_VERT);
         setTitle(I18n.lang("desktop.title")+"  :  "+I18n.lang("label.version"));
         ImageIcon img = new ImageIcon(getClass().getClassLoader().getResource("images/inlogo.png"));
         setIconImage ( img.getImage());
@@ -240,7 +240,7 @@ public class InApp extends WebFrame implements ActionListener{
         userPanel = new WebPanel();
         userPanel.setPreferredSize(new Dimension(300, 20));
         userPanel.setLayout(null);
-        user_Label =Setup.getLabel(I18n.lang("label.date"), 13,1,SwingConstants.LEFT);
+        user_Label =Setup.getLabel(I18n.lang("label.username"), 13,1,SwingConstants.LEFT);
         user_Label.setBounds(1, 1, 300, 20);
         userPanel.add(user_Label);
 
@@ -270,20 +270,21 @@ public class InApp extends WebFrame implements ActionListener{
     }
     public WebPanel getToolBar() {
         toolbarPanel = new WebPanel();
-        toolbarPanel.setPreferredSize(new Dimension(mainWidth-80, 30));
+        toolbarPanel.setPreferredSize(new Dimension(mainWidth-120, 30));
         toolbarPanel.setBackground(Setup.getColor());
         toolbarPanel.setLayout(null);   
         toolBar = new WebToolBar();
         toolBar.setFloatable(false);
         toolBar.setBackground(Setup.getColor());
-        toolBar.setBounds(1, 1, mainWidth-80, 30);
+        toolBar.setBounds(1, 1, mainWidth-120, 30);
+        
         toolbarPanel.add(toolBar);
 
         return toolbarPanel;
     }
     public WebPanel getExit() {
         exitPanel = new WebPanel();
-        exitPanel.setPreferredSize(new Dimension(80, 30));
+        exitPanel.setPreferredSize(new Dimension(100, 30));
         exitPanel.setBackground(Setup.getColor());
         exitPanel.setLayout(null);
 
