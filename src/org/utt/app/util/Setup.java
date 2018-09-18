@@ -107,6 +107,26 @@ public class Setup {
         dateInDBMSSQL=db_year+"-"+month+"-"+day;
         return dateInDBMSSQL;
     }
+    public static String ShowThaiDateShort1(String date){
+		String DateThai="",day1="";
+		String Date_from=date;
+		String Month_from=date;
+		String Year_from=date;
+		String year =Year_from.substring(0, 4);
+		String month=Month_from.substring(5, 7);
+		String day=Date_from.substring(8).trim();
+		if(day.substring(0,1).equals("0")){
+			day1=day.substring(1);
+		}
+		else{
+			day1=day;
+		}
+		int Thai_year=Integer.parseInt(year)+543 ;
+		DateThai=day1+" "+getMonthShortThaiName(month)+" "+Thai_year;
+		
+		return DateThai;
+		
+	}
     public static String ShowThaiDate(String date){
         String DateThai="",day="";
         String Date_from=date;
