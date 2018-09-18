@@ -21,6 +21,7 @@ import java.awt.font.TextAttribute;
 import java.util.Locale;
 import java.util.Map;
 
+import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.Period;
 import org.joda.time.PeriodType;
@@ -70,6 +71,13 @@ public class Setup {
 	public static double inchesToCms(double inch) {
 	    return inch * INCH_PER_CM;
 	}
+	public static boolean checkEmptyTextField(WebTextField t){
+        String id ="";
+        id = t.getText();
+        if(id.equals(""))
+            return true;
+        else return false;
+    }
 	public static void setLocale(){
         String[] parts = Prop.getProperty("app.locale").split("_");
         Locale.setDefault(new Locale(parts[0],parts[1]));
@@ -107,6 +115,43 @@ public class Setup {
         dateInDBMSSQL=db_year+"-"+month+"-"+day;
         return dateInDBMSSQL;
     }
+    public static String DateInDBMSSQLRef(String date){
+		String dateInDBMSSQL="";
+		String Date_from=date;
+		String Month_from=date;
+		String Year_from=date;
+		String year =Year_from.substring(0, 4);
+		String month=Month_from.substring(5, 7);
+		String day=Date_from.substring(8);
+		
+		int db_year=Integer.parseInt(year)+543 ;
+		dateInDBMSSQL=db_year+month+day;
+		
+		return dateInDBMSSQL;
+		
+	}
+    public static String GetDateTimeNow(){
+		DateTime now = new DateTime();
+		String datetime_in=now.toLocalDateTime().toString();
+		return datetime_in;
+	}
+    public static String GetDateNow(){
+		DateTime now = new DateTime();
+		String date_in=now.toLocalDate().toString();
+		return date_in;
+	}
+    public static String GetDateNow43(){
+		DateTime now = new DateTime();
+		String date_in=now.toLocalDateTime().toString();
+		String y=date_in.substring(0, 4);
+		String m=date_in.substring(5, 7);
+		String d=date_in.substring(8, 10);
+		String h=date_in.substring(11, 13);
+		String mm=date_in.substring(14, 16);
+		String s=date_in.substring(17, 19);
+		date_in=y+m+d+h+mm+s;
+		return date_in;
+	}
     public static String ShowThaiDateShort1(String date){
 		String DateThai="",day1="";
 		String Date_from=date;
