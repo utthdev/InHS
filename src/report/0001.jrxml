@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2018-07-03T08:13:56 -->
+<!-- 2018-09-18T09:13:14 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="0001" pageWidth="590" pageHeight="840" columnWidth="550" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a509daf9-b4e2-44f7-92ed-c30509b9fd03">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
@@ -120,7 +120,7 @@
 					<textElement>
 						<font fontName="THSarabunNew" size="16"/>
 					</textElement>
-					<text><![CDATA[NUR1]]></text>
+					<text><![CDATA[NUR2]]></text>
 				</staticText>
 				<line>
 					<reportElement x="319" y="16" width="120" height="1" uuid="65be2539-c968-4f65-bdc0-f3cc37ff9df3">
