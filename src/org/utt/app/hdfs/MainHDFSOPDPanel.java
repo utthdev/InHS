@@ -131,7 +131,7 @@ public class MainHDFSOPDPanel extends WebPanel implements Observer {
             }
         });
         ButtonPrint.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/printer.png")));
-        ButtonPrint.setBounds(width-((width*2)/10)-660, 12, 100, 25);
+        ButtonPrint.setBounds(460, 12, 100, 25);
 
         accordion = new WebAccordion( );
         accordion.addPane ( null, "Past 3 Month", getHDFS3(oUserInfo.GetPtHN()));

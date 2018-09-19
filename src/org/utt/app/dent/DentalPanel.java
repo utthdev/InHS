@@ -349,7 +349,7 @@ public class DentalPanel extends WebPanel implements Observer {
         labelImage = new ScaledImageLabel();
         labelImage.setPreferredSize(new Dimension(140, 140));
         //labelImage.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/no_img.png")));
-        labelImage.setBounds(width-(((width*2)/10)+200), 1, 140, 140);
+        labelImage.setBounds(width-(((width*2)/10)+200), 40, 100, 100);
         pt_info.add(labelImage);
 
         if(oUserInfo.GetPtVN().equals("")) {

@@ -345,7 +345,7 @@ public class PharOPDPanel extends WebPanel implements Observer {
 		        	labelImage.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/no_img.png")));				 			
 				}else {
 					//System.out.println(oUserInfo.GetPtHN());
-					labelImage.setIcon(new ImageIcon(previewPDFDocumentInImage(oUserInfo.GetPtHN())));
+					//labelImage.setIcon(new ImageIcon(previewPDFDocumentInImage(oUserInfo.GetPtHN())));
 				}
 			}
 		});
@@ -411,7 +411,7 @@ public class PharOPDPanel extends WebPanel implements Observer {
 		        	labelImage.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/no_img.png")));				 			
 				}else {
 					//System.out.println(oUserInfo.GetPtHN());
-					labelImage.setIcon(new ImageIcon(previewPDFDocumentInImage(oUserInfo.GetPtHN())));
+					//labelImage.setIcon(new ImageIcon(previewPDFDocumentInImage(oUserInfo.GetPtHN())));
 				}
 			}
 		});
@@ -464,13 +464,13 @@ public class PharOPDPanel extends WebPanel implements Observer {
 		labelImage = new ScaledImageLabel();
 		labelImage.setPreferredSize(new Dimension(140, 140));
 		//labelImage.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/no_img.png")));
-		labelImage.setBounds(750, 1, 140, 140);
+		labelImage.setBounds(width-(((width*2)/10)+200), 40, 100, 100);
 		pt_info.add(labelImage);
 		if(oUserInfo.GetPtVN().equals("")) {
         	labelImage.setIcon(new ImageIcon(getClass().getClassLoader().getResource("images/no_img.png")));				 			
 		}else {
-			System.out.println(oUserInfo.GetPtHN());
-			labelImage.setIcon(new ImageIcon(previewPDFDocumentInImage(oUserInfo.GetPtHN())));
+			//System.out.println(oUserInfo.GetPtHN());
+			//labelImage.setIcon(new ImageIcon(previewPDFDocumentInImage(oUserInfo.GetPtHN())));
 		} 
 		setLeftData();
 		setMainData();
