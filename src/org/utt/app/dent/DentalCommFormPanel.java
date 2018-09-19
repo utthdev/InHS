@@ -1384,7 +1384,7 @@ public class DentalCommFormPanel extends WebPanel implements Observer,ActionList
 				} catch (DRException e) {
 					e.printStackTrace();
 				}
-				/*
+				
 				if(exam_status==1) {
 					Connection con6;
 					PreparedStatement stmt6;
@@ -1400,7 +1400,7 @@ public class DentalCommFormPanel extends WebPanel implements Observer,ActionList
 						e.printStackTrace();
 					}
 				}
-				*/
+				
 				 
 				exam_status=0;
 		 
