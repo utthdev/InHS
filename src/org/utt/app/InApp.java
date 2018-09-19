@@ -46,6 +46,7 @@ import javax.swing.Timer;
 
 import org.h2.tools.DeleteDbFiles;
 import org.utt.app.adm.AdminFrame;
+import org.utt.app.admit.AdmitFrame;
 import org.utt.app.dao.DBmanager;
 import org.utt.app.dao.SetupSQL;
 import org.utt.app.dent.DentalCommFrame;
@@ -111,6 +112,7 @@ public class InApp extends WebFrame implements ActionListener{
     AdminFrame adminFrame;
     PharFrame pharFrame;
     FinanceFrame financeFrame;
+    AdmitFrame admitFrame;
 
 	
 	public InApp() {
@@ -580,6 +582,21 @@ public class InApp extends WebFrame implements ActionListener{
                                     }
                                 }
                             }
+                            else if(e.getActionCommand().trim().equals(Prop.getProperty("module.name.admit"))){
+                                disableFrame();
+                                if(admitFrame !=null) {
+                                    admitFrame.setVisible(true);
+                                }else {
+                                	admitFrame = new AdmitFrame(screen.width, screen.height-taskBarsize);
+                                    desktopPane.add(admitFrame);
+                                    admitFrame.setVisible(true);
+                                    try {
+                                    	admitFrame.setMaximum(true);
+                                    } catch (PropertyVetoException e1) {
+                                        e1.printStackTrace();
+                                    }
+                                }
+                            }
                             else if(e.getActionCommand().trim().equals(Prop.getProperty("module.name.fin"))){
                                 disableFrame();
                                 if( financeFrame !=null) {
@@ -624,6 +641,9 @@ public class InApp extends WebFrame implements ActionListener{
         }
         if(opdFrame !=null) {
             opdFrame.setVisible(false);
+        }
+        if(admitFrame !=null) {
+            admitFrame.setVisible(false);
         }
       
     }
