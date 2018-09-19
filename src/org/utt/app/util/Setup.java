@@ -18,6 +18,12 @@ package org.utt.app.util;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.font.TextAttribute;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 import java.util.Map;
 
@@ -25,6 +31,7 @@ import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.Period;
 import org.joda.time.PeriodType;
+import org.utt.app.dao.DBmanager;
 
 import com.alee.laf.label.WebLabel;
 import com.alee.laf.text.WebTextField;
@@ -130,6 +137,52 @@ public class Setup {
 		return dateInDBMSSQL;
 		
 	}
+    public static String DateInDBMSSQLno(String date){
+        String dateInDBMSSQL="";
+        String Date_from=date;
+        String Month_from=date;
+        String Year_from=date;
+        String year =Year_from.substring(0, 4);
+        String month=Month_from.substring(4, 6);
+        String day=Date_from.substring(6);
+        int db_year=Integer.parseInt(year)-543 ;
+        dateInDBMSSQL=db_year+"-"+month+"-"+day;
+
+        return dateInDBMSSQL;
+    }
+    public static String DateServ43(String date){
+		String date_serv="";
+		String Date_from=date;
+		String Month_from=date;
+		String Year_from=date;
+		String year =Year_from.substring(0, 4);
+		String month=Month_from.substring(5, 7);
+		String day=Date_from.substring(8);
+		
+		date_serv=year+month+day;
+		
+		return date_serv;
+		
+	}
+    public static String ConverttoScanDate(String _visitdate){
+		String date =_visitdate.substring(_visitdate.length()-2);
+		String month =_visitdate.substring(_visitdate.length()-5,_visitdate.length()-3);
+		int  year = Integer.parseInt(_visitdate.substring(0,4))+543;
+			String visitDate = ""+year+month+date;
+		return visitDate;
+	}
+    public static String ConvertDateTimePrint(Calendar time){
+		int date = time.get(time.DAY_OF_MONTH );
+		int month = time.get(time.MONTH)+1;
+		int  year = time.get(time.YEAR) + 543;
+		String currentDate = date + " " + getMonthThaiName(time) + " " + year;
+		
+		SimpleDateFormat TimeFormat_now = new SimpleDateFormat("HH:mm:ss");
+		Calendar cal_time= Calendar.getInstance();
+		String time_now = TimeFormat_now.format(cal_time.getTime());
+		
+		return currentDate+" เวลา "+time_now;
+	}
     public static String GetDateTimeNow(){
 		DateTime now = new DateTime();
 		String datetime_in=now.toLocalDateTime().toString();
@@ -189,6 +242,73 @@ public class Setup {
 
         return DateThai;
     }
+    public static String ShowThaiDate1(String date){
+		String DateThai="",day1="";
+		String Date_from=date;
+		String Month_from=date;
+		String Year_from=date;
+		String year =Year_from.substring(0, 4);
+		String month=Month_from.substring(5, 7);
+		String day=Date_from.substring(8).trim();
+		if(day.substring(0,1).equals("0")){
+			day1=day.substring(1);
+		}
+		else{
+			day1=day;
+		}
+		int Thai_year=Integer.parseInt(year)+543 ;
+		DateThai=day1+" "+getMonthThaiName2(month)+" พ.ศ. "+Thai_year;
+		
+		return DateThai;
+		
+	}
+    public static String getMonth(Calendar time){
+		int month=time.get(time.MONTH)+1;
+		String currentMonth=month+"";
+		return currentMonth;
+	}
+    public static String getMonthThaiName(Calendar time){
+		 
+		String currentMonth=getMonth(time);
+		String currentMonthThaiName="";
+		    if(currentMonth.equals("1")){
+		    	currentMonthThaiName="มกราคม";
+		    }
+		    else if(currentMonth.equals("2")){
+		    	currentMonthThaiName="กุมภาพันธ์";
+		    }
+		    else if(currentMonth.equals("3")){
+		    	currentMonthThaiName="มีนาคม";
+		    }
+		    else if(currentMonth.equals("4")){
+		    	currentMonthThaiName="เมษายน";
+		    }
+		    else if(currentMonth.equals("5")){
+		    	currentMonthThaiName="พฤษภาคม";
+		    }
+		    else if(currentMonth.equals("6")){
+		    	currentMonthThaiName="มิถุนายน";
+		    }
+		    else if(currentMonth.equals("7")){
+		    	currentMonthThaiName="กรกฎาคม";
+		    }
+		    else if(currentMonth.equals("8")){
+		    	currentMonthThaiName="สิงหาคม";
+		    }
+		    else if(currentMonth.equals("9")){
+		    	currentMonthThaiName="กันยายน";
+		    }
+		    else if(currentMonth.equals("10")){
+		    	currentMonthThaiName="ตุลาคม";
+		    }
+		    else if(currentMonth.equals("11")){
+		    	currentMonthThaiName="พฤศจิกายน";
+		    }
+		    else if(currentMonth.equals("12")){
+		    	currentMonthThaiName="ธันวาคม";
+		    }
+		return currentMonthThaiName;
+	}
     public static String getMonthThaiName2(String month){
 
         String currentMonth=month;
@@ -298,6 +418,24 @@ public class Setup {
         Period period = new Period(birthdate, now, PeriodType.yearMonthDay());
         int age_year=period.getYears();
         return age=age_year+"";
+    }
+    //
+    public static String getNHSO(String cid,String visitdate) {
+    	String inscl="";
+        String query="select maininscl,maininscl_main from patientnhso where cid='"+cid+"' and visitdate='"+visitdate+"'";
+        try {
+        	Connection conn=new DBmanager().getConnMySql();			
+        	PreparedStatement stmt = conn.prepareStatement(query);
+        	ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+            	inscl=rs.getString(2).trim()+":"+rs.getString(1).trim();
+            }
+            stmt.close();
+            conn.close();
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+    	return inscl;
     }
     
 }

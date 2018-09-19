@@ -40,6 +40,7 @@ import org.jdatepicker.impl.UtilDateModel;
 import org.utt.app.InApp;
 import org.utt.app.common.ObjectData;
 import org.utt.app.dao.DBmanager;
+import org.utt.app.dao.SetupSQL;
 import org.utt.app.opd.OPDFrame;
 import org.utt.app.util.DateLabelFormatter;
 import org.utt.app.util.PDFPrintPageHP;
@@ -784,7 +785,7 @@ public class PharOPDPanel extends WebPanel implements Observer {
 				final Vector<String> vstring = new Vector<String>();
 				vstring.add(" "+Integer.toString(p) );
 				vstring.add(rs.getString(1));
-				vstring.add(Setup.getName(rs.getString(2).trim()));
+				vstring.add(SetupSQL.getName(rs.getString(2).trim()));
 				vstring.add(rs.getString(2).trim());
 				vstring.add(clinic_pt);
 				vstring.add(pt_status);
@@ -1102,7 +1103,7 @@ public class PharOPDPanel extends WebPanel implements Observer {
 			    		oUserInfo.setPtCliniccode(selected);
 
 			    	}
-			    	String name=Setup.getName(rs.getString(2).trim());
+			    	String name=SetupSQL.getName(rs.getString(2).trim());
 			    	oUserInfo.setPtName(name);
 
 				    String inscl="";
@@ -1167,7 +1168,7 @@ public class PharOPDPanel extends WebPanel implements Observer {
 			    		oUserInfo.setPtCliniccode(selected);
 
 			    	}
-			    	String name=Setup.getName(rs.getString(2).trim());
+			    	String name=SetupSQL.getName(rs.getString(2).trim());
 			    	oUserInfo.setPtName(name);
 
 				    String inscl="";
@@ -1233,7 +1234,7 @@ public class PharOPDPanel extends WebPanel implements Observer {
 			    		searchVN(rs.getString(1).trim(),(rs.getString(2)).trim(),selected);
 			    		oUserInfo.setPtCliniccode(selected);
 			    	}
-			    	String name=Setup.getName(rs.getString(2).trim());
+			    	String name=SetupSQL.getName(rs.getString(2).trim());
 			    	oUserInfo.setPtName(name);
 
 				    String inscl="";
@@ -1314,7 +1315,7 @@ public class PharOPDPanel extends WebPanel implements Observer {
 			    		searchVN(rs.getString(1).trim(),(rs.getString(2)).trim(),selected);
 			    		oUserInfo.setPtCliniccode(selected);
 			    	}
-			    	String name=Setup.getName(rs.getString(2).trim());
+			    	String name=SetupSQL.getName(rs.getString(2).trim());
 			    	oUserInfo.setPtName(name);
 
 				    String inscl="";
