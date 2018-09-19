@@ -292,7 +292,7 @@ public class ScanScope extends WebPanel implements Observer{
 		    	  FileStatus[] fileStatus = fs.listStatus(newFolderPath);
 		    	    for(FileStatus status : fileStatus){
 		    	        String pp=status.getPath().toString().trim();
-		    	        if(pp.length()==78) {
+		    	        if(pp.length()==72) {
 		    	        	String ppp=pp.substring( pp.length()-31,pp.length()-23);
 		    	        	if(ppp.equals("25000101")) {
 		    	        		 
