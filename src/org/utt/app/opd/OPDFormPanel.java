@@ -1867,9 +1867,6 @@ public class OPDFormPanel extends WebPanel implements Observer,ActionListener{
 			}
 			stmt34.close();
 			
-			//for(int i=0;i<shortname.length;i++){
-			//	System.out.println(i+1+". "+shortname[i][0]);
-			//}
 			conn3.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -1912,8 +1909,6 @@ public class OPDFormPanel extends WebPanel implements Observer,ActionListener{
 				sql_user=sql_user1.substring(0,sql_user1.length()-1)+")";
 			}
 			
-			//String[] dr=null;
-			//dr = doctor.split("\\,");
 			 
 			 
 			int p=0;
@@ -1954,7 +1949,6 @@ public class OPDFormPanel extends WebPanel implements Observer,ActionListener{
 				stmtRow.close();
 				conn3.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			 
