@@ -1946,8 +1946,9 @@ public class OPDFormPanel extends WebPanel implements Observer,ActionListener{
 						
 					}
 					stmt.close();
-					cbRow1.addItem(new ComboItem("VN: "+rsRow.getString(1).trim()+"   "+Setup.getName(rsRow.getString(2).trim()),rsRow.getString(1).trim()+":"+Setup.getName(rsRow.getString(2).trim())+"*"+rsRow.getString(2).trim()+"#"+age_pt));
-					cbRow2.addItem(new ComboItem("VN: "+rsRow.getString(1).trim()+"   "+Setup.getName(rsRow.getString(2).trim()),rsRow.getString(1).trim()+":"+Setup.getName(rsRow.getString(2).trim())+"*"+rsRow.getString(2).trim()+"#"+age_pt));
+					String name_=Setup.getName(rsRow.getString(2).trim());
+					cbRow1.addItem(new ComboItem("VN: "+rsRow.getString(1).trim()+"   "+name_,rsRow.getString(1).trim()+":"+name_+"*"+rsRow.getString(2).trim()+"#"+age_pt));
+					cbRow2.addItem(new ComboItem("VN: "+rsRow.getString(1).trim()+"   "+name_,rsRow.getString(1).trim()+":"+name_+"*"+rsRow.getString(2).trim()+"#"+age_pt));
 					 
 				}
 				stmtRow.close();
