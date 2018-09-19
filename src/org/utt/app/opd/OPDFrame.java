@@ -21,6 +21,7 @@ import java.awt.Dimension;
 import org.utt.app.common.ObjectData;
 import org.utt.app.ui.IFrame;
 import org.utt.app.util.Prop;
+import org.utt.app.util.Setup;
 
 public class OPDFrame extends IFrame{
 	Dimension screen;

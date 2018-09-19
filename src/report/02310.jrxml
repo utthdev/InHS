@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2018-09-19T09:19:59 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="02309" pageWidth="590" pageHeight="840" columnWidth="530" leftMargin="50" rightMargin="10" topMargin="10" bottomMargin="10" uuid="2a450a86-f0c7-4c3c-be74-8102aa6b145d">
+<!-- 2018-09-17T11:26:18 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="02310" pageWidth="590" pageHeight="840" columnWidth="530" leftMargin="50" rightMargin="10" topMargin="10" bottomMargin="10" uuid="2a450a86-f0c7-4c3c-be74-8102aa6b145d">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
@@ -32,18 +32,17 @@
 		<band height="116" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<textField>
-				<reportElement x="3" y="40" width="514" height="20" uuid="251f462f-3693-4b57-a2fd-b9d176744e79">
+				<reportElement x="3" y="58" width="514" height="33" uuid="251f462f-3693-4b57-a2fd-b9d176744e79">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement>
-					<font fontName="THSarabunNew" size="14" isBold="true"/>
+					<font fontName="THSarabunNew" size="12" isBold="true"/>
 					<paragraph lineSpacing="Fixed" lineSpacingSize="10.0"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{line2}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement key="" x="0" y="60" width="520" height="20" uuid="900dfcac-4dad-4533-aa49-744c7abd3da9">
+				<reportElement key="" x="0" y="40" width="520" height="20" uuid="900dfcac-4dad-4533-aa49-744c7abd3da9">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement>
@@ -98,9 +97,7 @@
 				<text><![CDATA[แบบบันทึกการให้ยาเคมีบําบัดและการพยาบาลผู้ป่วย หน่วยเคมีบําบัด โรงพยาบาลอุตรดิตถ์]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="15" y="5" width="84" height="20" uuid="92fc787a-0fab-483a-a529-242f4a9de83d">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
+				<reportElement x="3" y="5" width="22" height="22" uuid="f77e656b-5b5a-43a3-8d8a-7f9e3da9ad54"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -110,20 +107,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="THSarabunNew" size="14"/>
 				</textElement>
-				<text><![CDATA[ตรงตามProtocol]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="113" y="5" width="22" height="22" uuid="f77e656b-5b5a-43a3-8d8a-7f9e3da9ad54"/>
-				<box>
-					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="THSarabunNew" size="14"/>
-				</textElement>
-				<text><![CDATA[37S]]></text>
+				<text><![CDATA[16S]]></text>
 			</staticText>
 			<textField>
 				<reportElement key="" x="0" y="80" width="520" height="20" uuid="e4f9a401-ae97-4229-af51-85845066c692">
@@ -154,7 +138,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="THSarabunNew" size="13" isBold="true" isUnderline="true"/>
 				</textElement>
-				<text><![CDATA[Pre Medicationก่อนให้Chemo 30 นาที]]></text>
+				<text><![CDATA[Premedication Start 30 min before chemotherapy ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="426" y="2" width="85" height="20" uuid="0f6b820e-dbe8-4f3a-a1fb-382c0749f483">
@@ -165,12 +149,43 @@
 				</textElement>
 				<text><![CDATA[วันที่............................]]></text>
 			</staticText>
-			<line>
-				<reportElement x="1" y="94" width="519" height="1" uuid="3cb00c80-a79a-405c-9e17-8fdccf758e4e"/>
-				<graphicElement>
-					<pen lineColor="#6F6F6F"/>
-				</graphicElement>
-			</line>
+			<staticText>
+				<reportElement x="10" y="32" width="271" height="20" uuid="89cb0afc-6c95-4d60-8f7c-9e56e3823b34">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunNew" size="13"/>
+				</textElement>
+				<text><![CDATA[1. NSS 100 ml IV drip KVO ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="45" width="330" height="20" uuid="07dd9508-ab14-48be-be0d-8718440e7f5f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunNew" size="13"/>
+				</textElement>
+				<text><![CDATA[2.Dexamethasone 12mg + Ondansetron 8 mg in NSS 50 ml IV drip in 30 min ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="91" width="291" height="20" uuid="abe2d2d9-1f9b-4055-8544-4d6044639749">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunNew" size="13" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Chemotherapy Order บริหารยาตามลําดับดังนี้]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="106" width="380" height="20" uuid="d26751eb-7607-4039-ac24-6bc05293fad4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunNew" size="13"/>
+				</textElement>
+				<text><![CDATA[1. Paclitaxel (Intaxel  )……………………....….mg (200 mg/m²) in NSS 500 ml IV drip in 3 hr  ]]></text>
+			</staticText>
 			<staticText>
 				<reportElement x="8" y="686" width="50" height="16" uuid="1bfd1da8-b2b9-43fe-8480-3ce20fb60bd3">
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
@@ -237,7 +252,7 @@
 				<text><![CDATA[ผู้ให้]]></text>
 			</staticText>
 			<line>
-				<reportElement x="1" y="80" width="519" height="1" uuid="dd5eeede-419a-48e4-8737-a81f7733a407"/>
+				<reportElement x="1" y="75" width="519" height="1" uuid="dd5eeede-419a-48e4-8737-a81f7733a407"/>
 				<graphicElement>
 					<pen lineColor="#6F6F6F"/>
 				</graphicElement>
@@ -255,7 +270,7 @@
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement x="1" y="1" width="1" height="106" uuid="1051176e-a074-443c-9f93-86e6d721e655">
+				<reportElement x="1" y="1" width="1" height="143" uuid="1051176e-a074-443c-9f93-86e6d721e655">
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
@@ -263,14 +278,7 @@
 				</reportElement>
 			</line>
 			<line>
-				<reportElement x="412" y="1" width="1" height="106" uuid="3a6c59a1-fd68-43cc-9198-a6df80546d4b">
-					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
-				</reportElement>
-			</line>
-			<line>
-				<reportElement x="519" y="1" width="1" height="106" uuid="0fbaf67e-8414-4378-8b6c-336350c6448c">
+				<reportElement x="412" y="1" width="1" height="143" uuid="3a6c59a1-fd68-43cc-9198-a6df80546d4b">
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
@@ -278,7 +286,14 @@
 				</reportElement>
 			</line>
 			<line>
-				<reportElement x="464" y="18" width="1" height="105" uuid="bf75deee-5831-4f6e-bd55-d1e33f2c856b">
+				<reportElement x="519" y="1" width="1" height="143" uuid="0fbaf67e-8414-4378-8b6c-336350c6448c">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="464" y="18" width="1" height="126" uuid="bf75deee-5831-4f6e-bd55-d1e33f2c856b">
 					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
@@ -294,96 +309,8 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 			</line>
-			<line>
-				<reportElement x="1" y="106" width="1" height="18" uuid="cbb3eb2e-21d7-4d3e-9339-5be29d86facf">
-					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-			</line>
-			<line>
-				<reportElement x="1" y="124" width="519" height="1" uuid="b0aa6b19-2255-4dba-9499-57d69d94fe63"/>
-				<graphicElement>
-					<pen lineColor="#6F6F6F"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement x="412" y="106" width="1" height="18" uuid="aaee4b4d-4c09-4b8f-98ac-4caa4ad245d7">
-					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-			</line>
-			<line>
-				<reportElement x="519" y="106" width="1" height="18" uuid="878181b6-e514-4472-808a-e456b6aa7640">
-					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
-				</reportElement>
-			</line>
-			<staticText>
-				<reportElement x="10" y="33" width="271" height="20" uuid="41f82c9e-dcb0-4d4c-a62f-3d9190cfaa9c">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="THSarabunNew" size="13"/>
-				</textElement>
-				<text><![CDATA[1. NSS 100 ml IV drip KVO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="10" y="47" width="330" height="20" uuid="ac8bf049-223d-46f4-b324-3ba09b66229a">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="THSarabunNew" size="13"/>
-				</textElement>
-				<text><![CDATA[2.Dexamethasone 12mg + Ondansetron 8 mg in NSS 50 ml IV drip in 30 min ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="10" y="94" width="291" height="20" uuid="b87dbef5-a46c-4b7b-8478-ba3f7475ddc3">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="THSarabunNew" size="13" isBold="true" isUnderline="true"/>
-				</textElement>
-				<text><![CDATA[Chemotherapy Order บริหารยาตามลําดับดังนี้]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="10" y="107" width="380" height="20" uuid="b2012420-f403-4fae-ac8a-ed3cd0df4adf">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="THSarabunNew" size="13"/>
-				</textElement>
-				<text><![CDATA[1. Paclitaxel (Intaxel  )……………………....….mg (175 mg/m²) in NSS 500 ml IV drip in 3 hr  ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="10" y="63" width="330" height="20" uuid="a6078d81-dbf2-41d0-a2a0-6d18d5906a74">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="THSarabunNew" size="13"/>
-				</textElement>
-				<text><![CDATA[3.Diphenhydramine (Benadryl  ) 2 tab stat ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="10" y="78" width="330" height="20" uuid="d738c743-cecb-4d9e-840c-9d8b2f48339d">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="THSarabunNew" size="13"/>
-				</textElement>
-				<text><![CDATA[4.Ranitidine  1 amp IV push ]]></text>
-			</staticText>
 			<frame>
-				<reportElement x="3" y="467" width="522" height="163" uuid="d09bc1ac-ad1b-43f2-834a-1e2ee53291fe">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
+				<reportElement x="3" y="522" width="522" height="158" uuid="d09bc1ac-ad1b-43f2-834a-1e2ee53291fe"/>
 				<staticText>
 					<reportElement x="10" y="3" width="202" height="16" uuid="da57c5ec-8e8b-4b4c-b076-2abb2655a0e3">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
@@ -509,17 +436,7 @@
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="THSarabunNew" size="12"/>
 					</textElement>
-					<text><![CDATA[เกิดอาการแทรกซ้อนรุนแรง ระบุ  .........................................................................................]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="10" y="120" width="502" height="16" uuid="13fe974e-a085-48ff-89c8-9ce4db5117b6">
-						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="THSarabunNew" size="12"/>
-					</textElement>
-					<text><![CDATA[การพยาบาล  .....................................................................................................................................................................................................]]></text>
+					<text><![CDATA[เกิดอาการแทรกซ้อนรุนแรง ระบุอาการและการพยาบาล .............................................................................................................................]]></text>
 				</staticText>
 				<rectangle>
 					<reportElement x="49" y="72" width="7" height="7" uuid="d38338f6-630a-465a-8cd0-a2f5ebfaebb7"/>
@@ -540,7 +457,7 @@
 					<reportElement x="223" y="85" width="7" height="7" uuid="277600a1-015c-4b26-87d8-da5faa26ed75"/>
 				</rectangle>
 				<staticText>
-					<reportElement x="10" y="133" width="66" height="16" uuid="4789d458-74d3-42ee-bc18-a3b82ab2216a">
+					<reportElement x="10" y="123" width="66" height="16" uuid="4789d458-74d3-42ee-bc18-a3b82ab2216a">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					</reportElement>
@@ -550,7 +467,7 @@
 					<text><![CDATA[5.ให้คําแนะนํา]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="67" y="133" width="444" height="16" uuid="6b845702-6289-4c54-ad54-7dcbdb52edff">
+					<reportElement x="67" y="123" width="444" height="16" uuid="6b845702-6289-4c54-ad54-7dcbdb52edff">
 						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -559,7 +476,7 @@
 					<text><![CDATA[ผู้ป่วย/ญาติ      เข้าใจ ทวนซ้ําสามารถตอบได้     ไม่เข้าใจระบุ..................................................................................................................]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="229" y="145" width="291" height="16" uuid="0f83ef9a-d149-44a1-9835-962e75ca7701">
+					<reportElement x="229" y="139" width="291" height="16" uuid="0f83ef9a-d149-44a1-9835-962e75ca7701">
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -568,16 +485,16 @@
 					<text><![CDATA[ผู้บันทึก...............................................................พยาบาลวิชาชีพชํานาญการ]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="213" y="137" width="7" height="7" uuid="2347a01c-162b-40fd-a699-fa7ca95dfa2c"/>
+					<reportElement x="213" y="127" width="7" height="7" uuid="2347a01c-162b-40fd-a699-fa7ca95dfa2c"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="109" y="137" width="7" height="7" uuid="9a6cb1a5-75d7-4bfd-ba77-03008731dd94"/>
+					<reportElement x="109" y="127" width="7" height="7" uuid="9a6cb1a5-75d7-4bfd-ba77-03008731dd94"/>
 				</rectangle>
 			</frame>
 			<frame>
-				<reportElement x="3" y="204" width="522" height="327" uuid="fdc51256-ac4f-4fbc-8a86-b7dce0d604d2"/>
+				<reportElement x="3" y="207" width="522" height="342" uuid="fdc51256-ac4f-4fbc-8a86-b7dce0d604d2"/>
 				<staticText>
-					<reportElement x="10" y="3" width="202" height="16" uuid="bccf9bac-49b6-4859-9d3a-3dbef7be29da">
+					<reportElement x="10" y="-7" width="202" height="16" uuid="bccf9bac-49b6-4859-9d3a-3dbef7be29da">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
@@ -585,10 +502,10 @@
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="THSarabunNew" size="12" isBold="true"/>
 					</textElement>
-					<text><![CDATA[2.การพยาบาล      สูตรยา AC     สูตรยา Paclitaxel ]]></text>
+					<text><![CDATA[2.การพยาบาล    ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="25" y="16" width="487" height="16" uuid="5eedc194-b8b0-48b4-b922-68a3579040b7">
+					<reportElement x="25" y="6" width="487" height="16" uuid="5eedc194-b8b0-48b4-b922-68a3579040b7">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -597,108 +514,47 @@
 					<text><![CDATA[วัดV/S ประเมินอาการ    เลือกเส้นแทงให้ยาที่สมบูรณ์    ให้Premedication ก่อนให้เคมีบำบัด 30 นาทีบริหารยาตามลำดับ ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="25" y="29" width="491" height="16" uuid="319a7876-468f-4d86-b2ea-3c9afe6e7d39">
+					<reportElement x="25" y="19" width="491" height="16" uuid="319a7876-468f-4d86-b2ea-3c9afe6e7d39">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="THSarabunNew" size="12"/>
 					</textElement>
-					<text><![CDATA[แนะนำไม่ให้เคลื่อนไหวหรือยกแขนข้างที่ให้ยามากเกินไป    ประเมินIV Site ว่ามีอาการบวม แดงหรือไม่  ]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="25" y="42" width="452" height="16" uuid="d5156a08-76bd-47ec-9e61-45491e1cf85b">
-						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="THSarabunNew" size="12"/>
-					</textElement>
-					<text><![CDATA[ถ้ามีหยุดให้ยา   ประคบเย็นและปฏิบัติตามแนวปฏิบัติการเกิด Extravasation ]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="25" y="55" width="456" height="16" uuid="b10220f6-0f6e-4742-8be0-2d4539e65628">
-						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="THSarabunNew" size="12"/>
-					</textElement>
-					<text><![CDATA[ปรับอัตราการไหลของยา Paclitaxelดังนี้]]></text>
+					<text><![CDATA[แนะนำไม่ให้เคลื่อนไหวหรือยกแขนข้างที่ให้ยามากเกินไป         ปรับอัตราการไหลของยา  Paclitaxel และ Carboplatin ดังนี้]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="16" y="60" width="7" height="7" uuid="2006a7a3-68f6-443f-ad48-0557ba46a069"/>
+					<reportElement x="212" y="24" width="7" height="7" uuid="4d91d944-6650-4cc6-9d2b-32f95b15ed27"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="202" y="34" width="7" height="7" uuid="4d91d944-6650-4cc6-9d2b-32f95b15ed27"/>
+					<reportElement x="16" y="24" width="7" height="7" uuid="b9cfc18a-e080-49a2-9656-33efd57b689d"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="16" y="34" width="7" height="7" uuid="b9cfc18a-e080-49a2-9656-33efd57b689d"/>
+					<reportElement x="16" y="10" width="7" height="7" uuid="afd9f4be-8dd1-4843-80e0-66feb18f1314"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="16" y="20" width="7" height="7" uuid="afd9f4be-8dd1-4843-80e0-66feb18f1314"/>
-				</rectangle>
-				<rectangle>
-					<reportElement x="97" y="20" width="7" height="7" uuid="13b317c6-34bd-4892-8cd6-e2628dee2a8e"/>
+					<reportElement x="97" y="10" width="7" height="7" uuid="13b317c6-34bd-4892-8cd6-e2628dee2a8e"/>
 				</rectangle>
 				<staticText>
-					<reportElement x="60" y="68" width="448" height="16" uuid="42221c49-da69-4d35-af26-7fbc56c1931b">
+					<reportElement x="30" y="45" width="234" height="16" uuid="42221c49-da69-4d35-af26-7fbc56c1931b">
 						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="THSarabunNew" size="12"/>
 					</textElement>
-					<text><![CDATA[บริหารยา Paclitaxel  (กรณี Priming ด้วย NSS ก่อนเริ่มปรับยาให้เปิดNSS เข้า(V) จำนวน 15 CC หรือตามปริมาตรset IVที่บริษัทกำหนด)]]></text>
+					<text><![CDATA[ เข้า(V) จำนวน 15 CC หรือตามปริมาตรset IVที่บริษัทกำหนด)]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="35" y="81" width="476" height="16" uuid="41d52f99-7e0d-47bb-ab0d-25d97f0f4d18">
-						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="THSarabunNew" size="12"/>
-					</textElement>
-					<text><![CDATA[1.ปรับrate  10cc/hr : volumn 3 cc         At……………..น วัดBP……...…........................mmHg p…..…../min R…......../mim]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="35" y="94" width="456" height="16" uuid="9d345228-dcc8-46b4-8bfb-bb6c9189eebd">
-						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="THSarabunNew" size="12"/>
-					</textElement>
-					<text><![CDATA[2.ปรับ rate 20cc/hr  :volumn 5 cc         At……………..น วัดBP……...…........................mmHg p…..…../min R…......../mim]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="35" y="107" width="451" height="16" uuid="53c35eeb-37d0-46e0-8489-9b0547e5780b">
+					<reportElement x="35" y="160" width="229" height="16" uuid="53c35eeb-37d0-46e0-8489-9b0547e5780b">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="THSarabunNew" size="12"/>
 					</textElement>
-					<text><![CDATA[3.ปรับ rate 40 cc/hr : volumn 10 cc      At……………..น วัดBP……...…........................mmHg p…..…../min R…......../mim]]></text>
+					<text><![CDATA[6.ปรับ rate 300 cc/hr  จำนวนยาที่เหลือจนหมด  ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="35" y="120" width="470" height="16" uuid="37a68c1b-21fc-4657-90dd-24ba2fbc6840">
-						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="THSarabunNew" size="12"/>
-					</textElement>
-					<text><![CDATA[4.ปรับ rate 60 cc/hr : volumn  20 cc     At……………..น วัดBP……...…........................mmHg p…..…../min R…......../mim]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="35" y="133" width="444" height="16" uuid="8c83bc03-5385-4766-8c09-84e42124c411">
-						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="THSarabunNew" size="12"/>
-					</textElement>
-					<text><![CDATA[4.ปรับ rate 120 cc/hr : volumn  20 cc     At……………..น วัดBP……...…........................mmHg p…..…../min R…......../mim]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="25" y="167" width="476" height="16" uuid="ddf034ea-c1c7-42a4-b1e4-787da8cf2ee5">
+					<reportElement x="25" y="174" width="476" height="16" uuid="ddf034ea-c1c7-42a4-b1e4-787da8cf2ee5">
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -707,10 +563,10 @@
 					<text><![CDATA[observe / ตรวจเยี่ยมทุก 15 นาที หากมีอาการดังต่อไปนี้หยุดให้ยาและรายงานแพทย์ และปฏิบัติตามแนวทางการพยายาลผู้ป่วยที่เกิดHypersensitivity]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="194" y="20" width="7" height="7" uuid="a65c819a-d433-442f-909c-90c6d3cbae73"/>
+					<reportElement x="194" y="10" width="7" height="7" uuid="a65c819a-d433-442f-909c-90c6d3cbae73"/>
 				</rectangle>
 				<staticText>
-					<reportElement x="35" y="180" width="434" height="16" uuid="1e6e240f-9c4c-4dc0-92be-39b5e6652011">
+					<reportElement x="35" y="186" width="434" height="16" uuid="1e6e240f-9c4c-4dc0-92be-39b5e6652011">
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -719,7 +575,7 @@
 					<text><![CDATA[Heart rate (HR)  < 50 หรือ > 100 ครั้ง/นาที          	- Blood pressure (BP) < 90/60 หรือ > 140/90 mm/hg]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="35" y="193" width="434" height="16" uuid="b80653de-3f9d-405d-812b-df177bf15405">
+					<reportElement x="35" y="199" width="434" height="16" uuid="b80653de-3f9d-405d-812b-df177bf15405">
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -728,16 +584,16 @@
 					<text><![CDATA[อาการเจ็บแน่นหน้าอก ใจสั่นใบหน้าแดง ผื่นคัน		- Respiratory rate (RR)< 12 หรือ > 20 ครั้ง/นาที]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="25" y="206" width="490" height="16" uuid="ba27a24b-4347-483f-a176-1e5414b7a5fa">
+					<reportElement x="25" y="252" width="490" height="16" uuid="ba27a24b-4347-483f-a176-1e5414b7a5fa">
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="THSarabunNew" size="12"/>
 					</textElement>
-					<text><![CDATA[แนะนำบ้วนปากด้วยน้ำเกลือ(เกลือ1ช้อน:น้ำต้มสุก1แก้ว) ทุกครั้งหลังทานอาหาร หรือบ่อยครั้งขึ้นเมื่อเริ่มมีแผลในปากหลีกเลี่ยงน้ำยาบ้วนปากที่มี แอลกอฮอล์]]></text>
+					<text><![CDATA[บ้วนปากด้วยน้ำอุ่นๆหรือน้ำเกลือเจือจาง หลังทานอาหารหรือหลังอาเจียนทุกครั้ง]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="25" y="219" width="476" height="16" uuid="cc58c342-285e-4abb-9135-896c57fddc69">
+					<reportElement x="25" y="268" width="476" height="16" uuid="cc58c342-285e-4abb-9135-896c57fddc69">
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -746,7 +602,7 @@
 					<text><![CDATA[ส่งปรึกษาเภสัชกรให้คำแนะนำเกี่ยวกับยาเคมีบำบัดที่ได้รับ อาการข้างเคียง และการปฏิบัติตัว ในรายรับยาครั้งแรก]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="25" y="232" width="470" height="16" uuid="1f92682f-e26f-4f38-a0f8-8202dd368b41">
+					<reportElement x="25" y="284" width="470" height="16" uuid="1f92682f-e26f-4f38-a0f8-8202dd368b41">
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -755,7 +611,7 @@
 					<text><![CDATA[ให้ข้อมูลและทบทวนซ้ำเรื่อง......................................     วันนัด     การทานยา     การฉีดยาNeuprogen     การเจาะเลือดตรวจ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="25" y="245" width="486" height="16" uuid="76f89ade-778a-4a3e-802f-b0b28c7b9861">
+					<reportElement x="25" y="300" width="486" height="16" uuid="76f89ade-778a-4a3e-802f-b0b28c7b9861">
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -764,68 +620,277 @@
 					<text><![CDATA[ส่งดูแลต่อเนื่องในรายที่รับยาครั้งแรกหรือมีปัญหา................................................................      อื่นๆ.............................................................................]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="16" y="211" width="7" height="7" uuid="d21b90fc-e30f-4336-a52a-94f3b0adc9e4"/>
+					<reportElement x="16" y="272" width="7" height="7" uuid="c701a0b2-fa5c-4cd2-b178-34449f0a2e14"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="16" y="225" width="7" height="7" uuid="c701a0b2-fa5c-4cd2-b178-34449f0a2e14"/>
+					<reportElement x="16" y="288" width="7" height="7" uuid="b3c2e925-f2b5-4740-a229-15bbbf058350"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="16" y="237" width="7" height="7" uuid="b3c2e925-f2b5-4740-a229-15bbbf058350"/>
+					<reportElement x="16" y="305" width="7" height="7" uuid="e45bbc28-a7dd-4d7d-a353-a8a9ca8864a9"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="16" y="250" width="7" height="7" uuid="e45bbc28-a7dd-4d7d-a353-a8a9ca8864a9"/>
+					<reportElement x="16" y="179" width="7" height="7" uuid="a235a8ea-deb8-4182-a79f-420c2e607fb8"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="16" y="172" width="7" height="7" uuid="a235a8ea-deb8-4182-a79f-420c2e607fb8"/>
+					<reportElement x="189" y="288" width="7" height="7" uuid="4ec73a1f-0b1e-4654-8234-5fdfb2a49a25"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="189" y="237" width="7" height="7" uuid="4ec73a1f-0b1e-4654-8234-5fdfb2a49a25"/>
+					<reportElement x="222" y="288" width="7" height="7" uuid="a69224da-9a10-451d-a10b-4284afa6bdb8"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="222" y="237" width="7" height="7" uuid="a69224da-9a10-451d-a10b-4284afa6bdb8"/>
+					<reportElement x="268" y="288" width="7" height="7" uuid="d22f8ad7-eff1-4435-8e74-f444d9d947af"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="268" y="237" width="7" height="7" uuid="d22f8ad7-eff1-4435-8e74-f444d9d947af"/>
+					<reportElement x="351" y="288" width="7" height="7" uuid="20f7fd9c-0db0-4d1b-91a5-8a65ba0b9d56"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="351" y="220" width="7" height="7" uuid="20f7fd9c-0db0-4d1b-91a5-8a65ba0b9d56"/>
-				</rectangle>
-				<rectangle>
-					<reportElement x="305" y="250" width="7" height="7" uuid="cfb44fbf-333c-4c10-a847-3a9ca2f7af76"/>
+					<reportElement x="305" y="305" width="7" height="7" uuid="cfb44fbf-333c-4c10-a847-3a9ca2f7af76"/>
 				</rectangle>
 				<line>
-					<reportElement x="26" y="69" width="482" height="1" uuid="394c79c1-e209-4b4b-9a3c-f24701ddf073">
+					<reportElement x="26" y="33" width="482" height="1" uuid="394c79c1-e209-4b4b-9a3c-f24701ddf073">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 				</line>
 				<line>
-					<reportElement x="26" y="162" width="482" height="1" uuid="d9037319-ce75-41f9-b229-f300059203bb">
+					<reportElement x="26" y="174" width="482" height="1" uuid="198d9f8e-e0a1-4acc-b31b-ce0669962f4e">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 				</line>
 				<line>
-					<reportElement x="26" y="69" width="1" height="93" uuid="7d391095-ab24-4e11-a812-d6d2a6fdcce5">
+					<reportElement x="25" y="33" width="1" height="141" uuid="7d391095-ab24-4e11-a812-d6d2a6fdcce5">
 						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-					</reportElement>
-				</line>
-				<line>
-					<reportElement x="508" y="69" width="1" height="93" uuid="e2843cba-7c7b-4789-837b-e3f0e3ba0234">
-						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					</reportElement>
 				</line>
 				<staticText>
-					<reportElement x="35" y="147" width="444" height="16" uuid="197641bb-25da-49db-8eec-503b64fab70f">
+					<reportElement x="35" y="59" width="229" height="16" uuid="5dbbc202-ebce-42af-a75f-18b354db9ddc">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[1.ปรับrate  10 cc /hr : volumn 3 cc     ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="69" width="229" height="16" uuid="be2e313d-4001-4315-bd16-b07c7592f6ef">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[ At…..........น วัดBP…........….....mmHg p........…./mR…........./mim]]></text>
+				</staticText>
+				<line>
+					<reportElement x="268" y="34" width="1" height="139" uuid="4dbeeed7-4dd7-4d70-b948-cae3ccfab69e">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+				</line>
+				<line>
+					<reportElement x="26" y="60" width="482" height="1" uuid="3a4f73d5-b083-4690-a2fc-ea1dd081873c">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement x="30" y="33" width="234" height="16" uuid="ca1b99cb-9de4-40b9-b3db-ca903f1f7ef7">
 						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="THSarabunNew" size="12"/>
 					</textElement>
-					<text><![CDATA[5.ปรับ  rate 300 cc = จำนวนยาที่เหลือจนหมด]]></text>
+					<text><![CDATA[บริหารยาPaclitaxel(กรณี Priming ด้วย NSS ก่อนเริ่มปรับยาให้เปิดNSS ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="271" y="34" width="234" height="16" uuid="8625eca7-0c9e-4740-9dbc-a59306061e6c">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[บริหารยาCarboplatin(กรณี Priming ด้วย NSS ก่อนเริ่มปรับยาให้เปิดNSS ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="271" y="45" width="234" height="16" uuid="db826abe-4d66-4eab-a46d-1e63c9a22b6c">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[ เข้า(V) จำนวน 15 CC หรือตามปริมาตรset IVที่บริษัทกำหนด)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="79" width="229" height="16" uuid="f837f53a-934b-4ca8-9678-52b8b4ee29a4">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[2.ปรับrate  20 cc /hr : volumn 3 cc     ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="89" width="229" height="16" uuid="b7b0f27d-601e-43dd-9a14-60c72364355c">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[ At…..........น วัดBP…........….....mmHg p........…./mR…........./mim]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="99" width="229" height="16" uuid="56cc98e1-e0be-4824-a04a-71de6c11b736">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[3.ปรับrate  40 cc /hr : volumn 3 cc     ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="109" width="229" height="16" uuid="d5b6e0fb-3039-4e20-91f2-b6684b4f5c44">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[ At…..........น วัดBP…........….....mmHg p........…./mR…........./mim]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="119" width="229" height="16" uuid="8b7d90ce-abca-4419-b55b-ff218b401178">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[4.ปรับrate  60 cc /hr : volumn 3 cc     ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="129" width="229" height="16" uuid="dd607dea-2abb-449b-8477-837f1ef89b11">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[ At…..........น วัดBP…........….....mmHg p........…./mR…........./mim]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="139" width="229" height="16" uuid="313babcc-c19d-4c3b-af8d-14473eec04e0">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[5.ปรับrate  120 cc /hr : volumn 3 cc     ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="35" y="149" width="229" height="16" uuid="14eebad0-39e8-4bff-bb88-3f0149aec0f6">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[ At…..........น วัดBP…........….....mmHg p........…./mR…........./mim]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="272" y="61" width="229" height="16" uuid="76879169-053b-400d-9218-0b78f79945ff">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[1.ปรับrate  40 cc /hr : volumn 3 cc     ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="272" y="71" width="229" height="16" uuid="bd109d8b-c28f-4e75-8efd-4d2f48641ef2">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[ At…..........น วัดBP…........….....mmHg p........…./mR…........./mim]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="272" y="81" width="229" height="16" uuid="526baa6b-4dd5-4233-bab4-66a2b7bcef68">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[2.ปรับrate  80 cc /hr : volumn 3 cc     ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="272" y="91" width="229" height="16" uuid="c35b9ff2-cb0b-4866-8c2c-38e9da38a226">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[ At…..........น วัดBP…........….....mmHg p........…./mR…........./mim]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="272" y="106" width="229" height="16" uuid="2bedf281-bb02-42f2-b4c1-fcf25c2fbe1e">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[6.ปรับ rate 200 cc/hr  จำนวนยาที่เหลือจนหมด  ]]></text>
+				</staticText>
+				<line>
+					<reportElement x="507" y="34" width="1" height="139" uuid="28121545-b8ff-4528-bbaa-2eac1e4862a2">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+				</line>
+				<staticText>
+					<reportElement x="25" y="211" width="490" height="16" uuid="faf24c04-39cc-4351-a76b-1d765e62233f">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[ประเมิน IV Site ว่ามีอาการ บวม แดง หรือไม่  ถ้ามี หยุดยา ประคบเย็น]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="16" y="217" width="7" height="7" uuid="a8a9118b-b465-46a8-85fc-d0297ddec6c6"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="25" y="224" width="490" height="16" uuid="95921a85-7c91-4399-8e7a-4a0d9055826e">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[แนะนำผู้ป่วย : อาจมีปัญหาการแข็งตัวของเลือด ให้ระวังการใช้มีดหรือของมีคมอื่นๆ ใช้แปรงสีฟันขนนิ่ม อย่าซื้อยารับประทานเองโดยเฉพาะยาแอสไพรินและ]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="16" y="230" width="7" height="7" uuid="fb79af99-0d3f-4216-826f-592751be3d4b"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="25" y="239" width="490" height="16" uuid="49d5b5d4-e97c-425f-acad-240969b31b35">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="THSarabunNew" size="12"/>
+					</textElement>
+					<text><![CDATA[ยาแก้ปวดข้อต่างๆ / ถ้ามีคลื่นไส้ อาเจียน ให้ทานอาหารช้าๆ เคี้ยวให้ละเอียด หลีกเลี่ยงอาการทอด มันหรือหวานจัด ทานผลไม้รสเปรี้ยว หรือดื่มน้ำขิง]]></text>
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement x="3" y="130" width="522" height="72" uuid="456a3e36-ebcc-410d-8e15-26f4db4cd0e5">
+				<reportElement x="3" y="144" width="522" height="60" uuid="456a3e36-ebcc-410d-8e15-26f4db4cd0e5">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<staticText>
@@ -859,78 +924,121 @@
 					<text><![CDATA[1.ปัญหาทางการพยาบาล:]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="106" y="42" width="262" height="16" uuid="a976c619-c4f4-4a5f-8d90-144c7c9c7b63">
+					<reportElement x="33" y="42" width="478" height="16" uuid="a976c619-c4f4-4a5f-8d90-144c7c9c7b63">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="THSarabunNew" size="12"/>
 					</textElement>
-					<text><![CDATA[เสี่ยงต่อการเกิดภาวะ Hypersensitivity จากสูตรยา Paclitaxel]]></text>
+					<text><![CDATA[พร่องความรู้ในการปฏิบัติตัว     วิตกกังวลเรื่อง.................................................       อื่นๆ.....................................................]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="95" y="46" width="7" height="7" uuid="6183ae4f-9fdc-48bb-944f-3633cc5be58b"/>
-				</rectangle>
-				<staticText>
-					<reportElement x="35" y="55" width="456" height="16" uuid="4d26bc49-49e2-4d77-b1e0-f7b87cd47240">
-						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="THSarabunNew" size="12"/>
-					</textElement>
-					<text><![CDATA[ขาดความรู้ในการปฏิบัติตัวเนื่องจากรับยาครั้งแรก     อื่นๆ...................................................................................................................................]]></text>
-				</staticText>
-				<rectangle>
-					<reportElement x="25" y="60" width="7" height="7" uuid="87452faa-f961-4455-834b-d1495a4a6c2c"/>
-				</rectangle>
-				<rectangle>
-					<reportElement x="192" y="60" width="7" height="7" uuid="624fe78c-e5ac-4c72-9170-d1336c90b444"/>
+					<reportElement x="22" y="47" width="7" height="7" uuid="6183ae4f-9fdc-48bb-944f-3633cc5be58b"/>
 				</rectangle>
 				<rectangle>
 					<reportElement x="95" y="34" width="7" height="7" uuid="eb2383e4-734f-4634-9fe5-7f30e033f206"/>
 				</rectangle>
 				<staticText>
-					<reportElement x="95" y="3" width="421" height="16" uuid="beae553f-cda3-4737-9fc2-fabeb10fa576">
+					<reportElement x="95" y="3" width="407" height="16" uuid="beae553f-cda3-4737-9fc2-fabeb10fa576">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="THSarabunNew" size="12"/>
 					</textElement>
-					<text><![CDATA[รับจาก.......................................................................เวลา.........................น  ประเมินผู้ป่วยก่อนรับยา...................................................]]></text>
+					<text><![CDATA[รับจาก...................................วันที่....................................เวลา.........................น  ประเมินผู้ป่วยก่อนรับยา....................................]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="106" y="29" width="334" height="16" uuid="2865537a-b1ed-471d-bcd1-597085215288">
+					<reportElement x="106" y="29" width="414" height="16" uuid="2865537a-b1ed-471d-bcd1-597085215288">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="THSarabunNew" size="12"/>
 					</textElement>
-					<text><![CDATA[เสี่ยงต่อการเกิดภาวะแทรกซ้อนจากสูตรยา AC: Extravasation , Mucositis จากสูตร AC]]></text>
+					<text><![CDATA[เสี่ยงต่อการเกิดภาวะแทรกซ้อนHypersensitivityจากยา Paclitaxel และ Carboplatin ,Thombocytopenia จากยา Carboplatin ]]></text>
 				</staticText>
+				<rectangle>
+					<reportElement x="277" y="47" width="7" height="7" uuid="c9d9f222-919d-4be1-b715-8d5ee20633b2"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="123" y="47" width="7" height="7" uuid="8dc7dd31-05a1-442d-8cd0-db2c3f22c3f8"/>
+				</rectangle>
 			</frame>
+			<staticText>
+				<reportElement x="10" y="58" width="330" height="20" uuid="42343c61-f0e6-4fdc-a481-c941b8f0041f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunNew" size="13"/>
+				</textElement>
+				<text><![CDATA[3.Diphenhydramine (Benadryl   ) 2 tab stat ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="124" width="380" height="20" uuid="fe5c4058-7142-45b9-89d9-2d1be4d20c09">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunNew" size="13"/>
+				</textElement>
+				<text><![CDATA[2. Carboplatin……………………....….mg (AUC=5-6) in NSS 100 ml IV drip in 1 hr  ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="144" width="519" height="1" uuid="64846ce8-c95f-4c9f-a85f-4c0d1b33b213"/>
+				<graphicElement>
+					<pen lineColor="#6F6F6F"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="10" y="73" width="330" height="20" uuid="ee0f884c-fa8e-4efe-a902-5f949b1332d3">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunNew" size="13"/>
+				</textElement>
+				<text><![CDATA[4.Ranitidine  1 amp IV push ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="90" width="519" height="1" uuid="5b2f57b5-852c-4ba9-9e8a-fac776742af3"/>
+				<graphicElement>
+					<pen lineColor="#6F6F6F"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="124" width="519" height="1" uuid="23450b71-aa49-4dae-875a-2f0bc4c52ea5"/>
+				<graphicElement>
+					<pen lineColor="#6F6F6F"/>
+				</graphicElement>
+			</line>
 			<ellipse>
-				<reportElement x="124" y="63" width="10" height="10" uuid="05f795ff-f06b-474e-a172-5d0a4bb43d09">
+				<reportElement x="86" y="106" width="10" height="10" uuid="21546914-3878-4e3e-abef-6d90e0cbea11">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 			</ellipse>
 			<staticText>
-				<reportElement x="127" y="62" width="15" height="15" uuid="f42411b5-65dd-4cf0-b36e-febfa3e39a83"/>
+				<reportElement x="89" y="105" width="15" height="15" uuid="e68f40b0-02c6-4df8-8b20-bd3b27882e76">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
 				<textElement>
 					<font fontName="THSarabunNew" size="10"/>
 				</textElement>
 				<text><![CDATA[R]]></text>
 			</staticText>
 			<ellipse>
-				<reportElement x="85" y="106" width="10" height="10" uuid="bc2d187f-39ab-4ef7-9713-60803d0b7242">
+				<reportElement x="124" y="58" width="10" height="10" uuid="ff99eeb0-925d-4dc7-ab5c-03dcf014a317">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 			</ellipse>
 			<staticText>
-				<reportElement x="88" y="105" width="15" height="15" uuid="f4ca834c-8a45-43bd-b159-e07624d6f85f"/>
+				<reportElement x="127" y="57" width="15" height="15" uuid="c5ef5477-46cb-4598-98a8-08b808d0cdcc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
 				<textElement>
 					<font fontName="THSarabunNew" size="10"/>
 				</textElement>

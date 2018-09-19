@@ -13,36 +13,36 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  ******************************************************************************/
-package org.utt.app.dent;
+package org.utt.app.admit;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 import org.utt.app.common.ObjectData;
+import org.utt.app.ipd.IPDPanel;
 import org.utt.app.ui.IFrame;
 import org.utt.app.util.Prop;
 
-public class DentalCommFrame  extends IFrame{
+public class AdmitFrame extends IFrame{
 	Dimension screen;
-	DentalCommPanel dentalCommPanel;
-	ObjectData objectData;
-	
-	public DentalCommFrame(int w,int h) {
-		super();
-		
+    ObjectData objectData;
+    AdmitPanel admitPanel;
+    public AdmitFrame(int w,int h) {
+    	super();
         setBounds(0, 0, w, h);
         setPreferredSize(new Dimension(w, h));
-        setTitle(Prop.getProperty("module.name.dental.comm"));
+        setTitle(Prop.getProperty("module.name.ipd"));
         setLocation(0, 0);
         //setClosable(true);
         //setIconifiable(true);
         //setMaximizable(true);
         objectData = new ObjectData();
-        dentalCommPanel = new DentalCommPanel(objectData,getBounds().width,getBounds().height);
-        objectData.addObserver(dentalCommPanel);
-        getContentPane().add(dentalCommPanel, BorderLayout.CENTER);
+        admitPanel = new AdmitPanel(objectData,getBounds().width,getBounds().height);
+        objectData.addObserver(admitPanel);
+        getContentPane().add(admitPanel, BorderLayout.CENTER);
 
-		updateUI();
-	}
+
+        updateUI();
+    }
 
 }

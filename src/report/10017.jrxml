@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2018-08-22T08:54:47 -->
+<!-- 2018-09-18T08:32:58 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="10017" pageWidth="590" pageHeight="840" columnWidth="530" leftMargin="50" rightMargin="10" topMargin="10" bottomMargin="10" uuid="2a450a86-f0c7-4c3c-be74-8102aa6b145d">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
@@ -89,11 +89,11 @@
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<staticText>
-					<reportElement x="0" y="18" width="242" height="30" uuid="85da5cc1-9a89-4c11-95e9-b298d9623fcd"/>
+					<reportElement x="0" y="1" width="242" height="30" uuid="85da5cc1-9a89-4c11-95e9-b298d9623fcd"/>
 					<textElement>
 						<font fontName="THSarabunNew" size="13"/>
 					</textElement>
-					<text><![CDATA[ประเภท..........................   การแพ้ยา................................................]]></text>
+					<text><![CDATA[ประเภท..........................  ]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="1" y="85" width="75" height="30" uuid="aef13fe7-4dc0-42ab-b67f-3f378d730227"/>
@@ -173,7 +173,7 @@
 					</graphicElement>
 				</line>
 				<staticText>
-					<reportElement x="1" y="0" width="239" height="18" uuid="05fc33c0-fe26-4301-a1d3-7f32a106b7a2">
+					<reportElement x="1" y="14" width="239" height="18" uuid="05fc33c0-fe26-4301-a1d3-7f32a106b7a2">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement>
@@ -182,13 +182,13 @@
 					<text><![CDATA[มาถึงโดย       เดินมาเอง        รถนั่ง         รถนอน                 ]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="38" y="4" width="8" height="8" uuid="f07f51bc-c426-4833-bad4-8f152055cf32"/>
+					<reportElement x="38" y="18" width="8" height="8" uuid="f07f51bc-c426-4833-bad4-8f152055cf32"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="93" y="4" width="8" height="8" uuid="8359dee3-137a-4faa-b5c8-e99d4e4e03df"/>
+					<reportElement x="93" y="18" width="8" height="8" uuid="8359dee3-137a-4faa-b5c8-e99d4e4e03df"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="134" y="4" width="8" height="8" uuid="2f5f03e4-4d98-4266-9888-8640d7f12859"/>
+					<reportElement x="134" y="18" width="8" height="8" uuid="2f5f03e4-4d98-4266-9888-8640d7f12859"/>
 				</rectangle>
 				<staticText>
 					<reportElement x="0" y="52" width="238" height="18" uuid="60a96045-2d29-4685-9a3c-4fa9a2f9f52c">
@@ -357,7 +357,7 @@
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement x="255" y="620" width="263" height="51" uuid="eb2eaf58-c0c9-421d-84ef-423f649c3e64">
+				<reportElement x="255" y="592" width="263" height="51" uuid="eb2eaf58-c0c9-421d-84ef-423f649c3e64">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
@@ -429,7 +429,7 @@
 				</reportElement>
 			</line>
 			<staticText>
-				<reportElement x="363" y="656" width="141" height="20" uuid="27b2760b-da06-4a8c-b01c-c4660c61126c">
+				<reportElement x="363" y="630" width="141" height="20" uuid="27b2760b-da06-4a8c-b01c-c4660c61126c">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Bottom">
@@ -485,12 +485,12 @@
 				<text><![CDATA[เอกสารสำคัญห้ามนำออกนอกโรงพยาบาลพบเห็นส่งคืนห้องบัตร]]></text>
 			</staticText>
 			<line>
-				<reportElement x="254" y="625" width="265" height="1" uuid="aeaf4d9a-1e3d-4c94-a552-61980e2d38a5">
+				<reportElement x="254" y="591" width="265" height="1" uuid="aeaf4d9a-1e3d-4c94-a552-61980e2d38a5">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 			</line>
 			<frame>
-				<reportElement x="258" y="541" width="256" height="80" uuid="49a72efa-0fcb-4343-93da-d02469f4916e">
+				<reportElement x="5" y="614" width="244" height="80" uuid="49a72efa-0fcb-4343-93da-d02469f4916e">
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 				</reportElement>
 				<box>
@@ -539,7 +539,7 @@
 					<text><![CDATA[3.ไม่มียา ED ให้ใช้ แต่มีข้อบ่งชี้การใช้ยาตามที่ อย.กำหนด]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="2" y="40" width="242" height="16" uuid="3e498143-881a-460e-b74e-d7e9d2982f1a">
+					<reportElement x="2" y="40" width="235" height="16" uuid="3e498143-881a-460e-b74e-d7e9d2982f1a">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
@@ -560,7 +560,7 @@
 					<text><![CDATA[5.ยา ED มีราคาแพงกว่า]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="2" y="60" width="242" height="16" uuid="9321abd1-727c-4236-a476-7b57df979869">
+					<reportElement x="2" y="60" width="232" height="16" uuid="9321abd1-727c-4236-a476-7b57df979869">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					</reportElement>
@@ -588,7 +588,7 @@
 					<text><![CDATA[ประวัติประจำเดือน]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="2" y="16" width="243" height="20" uuid="a1369882-fb03-43b0-9339-54eb1bb84a82">
+					<reportElement x="20" y="16" width="203" height="20" uuid="a1369882-fb03-43b0-9339-54eb1bb84a82">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
@@ -598,7 +598,7 @@
 					<text><![CDATA[หมดประจำเดือนปี พศ..................................]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="1" y="31" width="243" height="20" uuid="5b2955ee-8752-4633-a46a-91fdb55ada58">
+					<reportElement x="19" y="31" width="203" height="20" uuid="5b2955ee-8752-4633-a46a-91fdb55ada58">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 					</reportElement>
@@ -607,6 +607,12 @@
 					</textElement>
 					<text><![CDATA[ประจำเดือนครั้งสุดท้าย วดป. ......................................................]]></text>
 				</staticText>
+				<rectangle>
+					<reportElement x="8" y="21" width="8" height="8" uuid="226eacc0-2eee-4f0f-9c28-3ed805a279eb"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="8" y="35" width="8" height="8" uuid="63fdfb1b-0824-4b4f-bc31-1160fabf0286"/>
+				</rectangle>
 			</frame>
 			<line>
 				<reportElement x="1" y="402" width="251" height="1" forecolor="#6F6F6F" uuid="9f07066d-6153-4aac-a5c0-57bc33de8de6">
@@ -645,16 +651,7 @@
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement x="6" y="28" width="230" height="1" forecolor="#6F6F6F" uuid="11290453-13ae-4c05-a55f-63f889e0deb4">
-						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-					</reportElement>
-					<graphicElement>
-						<pen lineStyle="Dotted"/>
-					</graphicElement>
-				</line>
-				<line>
-					<reportElement x="70" y="43" width="158" height="1" forecolor="#6F6F6F" uuid="5b9b5fb3-8577-445f-ae1d-221f30c190c5">
+					<reportElement x="70" y="33" width="158" height="1" forecolor="#6F6F6F" uuid="5b9b5fb3-8577-445f-ae1d-221f30c190c5">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
@@ -664,7 +661,7 @@
 					</graphicElement>
 				</line>
 				<staticText>
-					<reportElement x="1" y="31" width="72" height="20" uuid="1422b4f9-e83a-4a10-88b8-701546df00de">
+					<reportElement x="1" y="21" width="72" height="20" uuid="1422b4f9-e83a-4a10-88b8-701546df00de">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement>
@@ -672,17 +669,8 @@
 					</textElement>
 					<text><![CDATA[กิจกรรมพยาบาล ]]></text>
 				</staticText>
-				<line>
-					<reportElement x="6" y="59" width="230" height="1" forecolor="#6F6F6F" uuid="a4ede1d1-2e21-411b-ba80-9e39017a3e71">
-						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-					</reportElement>
-					<graphicElement>
-						<pen lineStyle="Dotted"/>
-					</graphicElement>
-				</line>
 				<staticText>
-					<reportElement x="1" y="62" width="72" height="20" uuid="471978e9-9b98-4841-968e-264373c79c2b">
+					<reportElement x="1" y="40" width="72" height="20" uuid="471978e9-9b98-4841-968e-264373c79c2b">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement>
@@ -691,10 +679,10 @@
 					<text><![CDATA[คำแนะนำ]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="46" y="66" width="8" height="8" uuid="16828c46-7ff6-4259-9f40-6b266a4cc69a"/>
+					<reportElement x="46" y="44" width="8" height="8" uuid="16828c46-7ff6-4259-9f40-6b266a4cc69a"/>
 				</rectangle>
 				<staticText>
-					<reportElement x="59" y="62" width="174" height="20" uuid="5377f5b7-2c1a-4661-aa50-a2d3f009b639">
+					<reportElement x="59" y="40" width="174" height="20" uuid="5377f5b7-2c1a-4661-aa50-a2d3f009b639">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement>
@@ -703,16 +691,16 @@
 					<text><![CDATA[เรื่องอาหาร       การใช้ยา       การดูแลตนเอง ]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="105" y="66" width="8" height="8" uuid="1173d0e5-a59a-4f0d-9a2e-24497db7656d"/>
+					<reportElement x="105" y="44" width="8" height="8" uuid="1173d0e5-a59a-4f0d-9a2e-24497db7656d"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="155" y="66" width="8" height="8" uuid="365f316e-7e45-44dc-8f82-485df6624ec3"/>
+					<reportElement x="155" y="44" width="8" height="8" uuid="365f316e-7e45-44dc-8f82-485df6624ec3"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="170" y="80" width="8" height="8" uuid="53698f14-ae42-4b75-8554-5f9cd4f4e537"/>
+					<reportElement x="170" y="58" width="8" height="8" uuid="53698f14-ae42-4b75-8554-5f9cd4f4e537"/>
 				</rectangle>
 				<staticText>
-					<reportElement x="21" y="76" width="214" height="20" uuid="79fb6962-32ee-4e0d-918b-c139f876b783">
+					<reportElement x="21" y="53" width="214" height="20" uuid="79fb6962-32ee-4e0d-918b-c139f876b783">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement>
@@ -721,13 +709,13 @@
 					<text><![CDATA[การออกกำลังกาย      สังเกตอาการผิดปกติ     ตรวจตามนัด]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="86" y="80" width="8" height="8" uuid="de5828a6-40ae-4d32-a34f-4152d1562c80"/>
+					<reportElement x="86" y="58" width="8" height="8" uuid="de5828a6-40ae-4d32-a34f-4152d1562c80"/>
 				</rectangle>
 				<rectangle>
-					<reportElement x="10" y="80" width="8" height="8" uuid="635347b6-699c-4645-8e52-204c0bec045e"/>
+					<reportElement x="10" y="58" width="8" height="8" uuid="635347b6-699c-4645-8e52-204c0bec045e"/>
 				</rectangle>
 				<staticText>
-					<reportElement x="1" y="94" width="68" height="20" uuid="758f1434-9488-4de4-b879-2ceb39d689c1">
+					<reportElement x="1" y="72" width="68" height="20" uuid="758f1434-9488-4de4-b879-2ceb39d689c1">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement>
@@ -736,7 +724,7 @@
 					<text><![CDATA[อื่นๆ]]></text>
 				</staticText>
 				<line>
-					<reportElement x="28" y="103" width="193" height="1" forecolor="#6F6F6F" uuid="41017417-76e8-4643-8832-0039db11f294">
+					<reportElement x="28" y="84" width="193" height="1" forecolor="#6F6F6F" uuid="41017417-76e8-4643-8832-0039db11f294">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					</reportElement>
@@ -745,7 +733,7 @@
 					</graphicElement>
 				</line>
 				<line>
-					<reportElement x="64" y="118" width="158" height="1" forecolor="#6F6F6F" uuid="0a12f226-e137-41ea-9b89-3559065c6051">
+					<reportElement x="64" y="102" width="158" height="1" forecolor="#6F6F6F" uuid="0a12f226-e137-41ea-9b89-3559065c6051">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 					</reportElement>
@@ -754,7 +742,7 @@
 					</graphicElement>
 				</line>
 				<staticText>
-					<reportElement x="1" y="108" width="68" height="20" uuid="e7dc9a80-87e2-4a6b-909e-bebf475c4119">
+					<reportElement x="1" y="91" width="68" height="20" uuid="e7dc9a80-87e2-4a6b-909e-bebf475c4119">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement>
@@ -763,7 +751,7 @@
 					<text><![CDATA[การประเมินผล   ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="69" y="118" width="166" height="20" uuid="69aed2e6-89c9-4f2d-9244-4b1f443ac82c">
+					<reportElement x="69" y="111" width="166" height="20" uuid="69aed2e6-89c9-4f2d-9244-4b1f443ac82c">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement verticalAlignment="Bottom">

@@ -18,6 +18,7 @@ package org.utt.app.ui;
 import com.alee.laf.desktoppane.WebInternalFrame;
 import org.utt.app.dao.DBmanager;
 import org.utt.app.dao.SetupSQL;
+import org.utt.app.util.Setup;
 
 import javax.swing.*;
 import java.awt.*;
@@ -45,14 +46,14 @@ public class IFrame extends WebInternalFrame {
         setDefaultCloseOperation(HIDE_ON_CLOSE);
         getContentPane().setLayout(new BorderLayout(0, 0));
         setVisible(false);
-
+         
         initname_indb();
         rightname();
         init_z515();
         initclinic();
         initDose();
         initFormDrug();
-   
+
     }
     public void initname_indb(){
         int p=0;
