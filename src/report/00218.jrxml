@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2018-09-10T10:26:13 -->
+<!-- 2018-09-17T07:55:02 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="00218" pageWidth="590" pageHeight="840" columnWidth="530" leftMargin="50" rightMargin="10" topMargin="10" bottomMargin="10" uuid="2a450a86-f0c7-4c3c-be74-8102aa6b145d">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
@@ -428,7 +428,7 @@
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="335" y="668" width="141" height="20" uuid="27b2760b-da06-4a8c-b01c-c4660c61126c">
+				<reportElement x="335" y="666" width="141" height="20" uuid="27b2760b-da06-4a8c-b01c-c4660c61126c">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Bottom">
@@ -527,7 +527,7 @@
 				</staticText>
 			</frame>
 			<textField>
-				<reportElement x="257" y="86" width="258" height="531" uuid="db42bd93-b458-4c91-b831-422e1d1ea7cb">
+				<reportElement x="257" y="86" width="258" height="504" uuid="db42bd93-b458-4c91-b831-422e1d1ea7cb">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement>
@@ -536,7 +536,7 @@
 				<textFieldExpression><![CDATA[$P{med1}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="267" y="632" width="150" height="20" uuid="d61706e0-dc6c-4766-a0cc-ce990bfbb192">
+				<reportElement x="267" y="598" width="150" height="20" uuid="d61706e0-dc6c-4766-a0cc-ce990bfbb192">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement>
@@ -544,17 +544,8 @@
 				</textElement>
 				<text><![CDATA[วันที่นัด follow up ครั้งต่อไป]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="267" y="617" width="150" height="20" uuid="0cc3a2df-d4eb-4100-9ba5-b1fb2313637e">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-				<textElement>
-					<font fontName="THSarabunNew" size="13"/>
-				</textElement>
-				<text><![CDATA[แผนการดูแลรักษาต่อเนื่อง]]></text>
-			</staticText>
 			<line>
-				<reportElement x="368" y="629" width="141" height="1" forecolor="#6F6F6F" uuid="3a0918a5-a8a8-4726-a8b5-9e089ec542e8">
+				<reportElement x="368" y="610" width="141" height="1" forecolor="#6F6F6F" uuid="2f519d53-457e-46ed-b0d7-1944fb58e86c">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 				</reportElement>
@@ -563,16 +554,7 @@
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement x="368" y="644" width="141" height="1" forecolor="#6F6F6F" uuid="2f519d53-457e-46ed-b0d7-1944fb58e86c">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineStyle="Dotted"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement x="368" y="659" width="141" height="1" forecolor="#6F6F6F" uuid="dad0ff3a-490e-46e0-9f12-14448dff9654">
+				<reportElement x="368" y="625" width="141" height="1" forecolor="#6F6F6F" uuid="dad0ff3a-490e-46e0-9f12-14448dff9654">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 				</reportElement>
@@ -581,7 +563,7 @@
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="267" y="647" width="150" height="20" uuid="e854921d-c080-47d9-9aff-51e0f1583aaa">
+				<reportElement x="267" y="613" width="150" height="20" uuid="e854921d-c080-47d9-9aff-51e0f1583aaa">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement>
