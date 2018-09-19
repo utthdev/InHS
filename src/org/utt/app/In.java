@@ -25,9 +25,9 @@ public class In {
         new InApp();
     }
     public static void main( String[] args ){
-    	
+ 
         try {
-            UIManager.setLookAndFeel("com.alee.laf.WebLookAndFeel");
+            UIManager.setLookAndFeel("com.alee.laf.WebLookAndFeel"); 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
