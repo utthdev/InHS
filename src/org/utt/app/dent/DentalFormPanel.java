@@ -27,8 +27,13 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -4157,6 +4162,7 @@ public class DentalFormPanel extends WebPanel implements Observer,ActionListener
 			JasperReportBuilder report = DynamicReports.report(); 
 			report.setTemplate(template()).setPageFormat(590, h_page, PageOrientation.PORTRAIT);
 			InputStream in = this.getClass().getClassLoader().getResourceAsStream(confFile );
+			
 			report.setTemplateDesign(in);
 			if( form_code.equals("00115") ||  form_code.equals("00117")  ){
 				try {
